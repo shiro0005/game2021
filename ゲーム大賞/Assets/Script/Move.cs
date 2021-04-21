@@ -16,21 +16,21 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.Translate(0f, 0f, 0.1f);
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * speed * Time.deltaTime;
+            transform.Translate(0f, 0f, -0.1f);
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position += transform.right * speed * Time.deltaTime;
+            transform.Translate(-0.1f, 0f, 0f);
         }
-        if (Input.GetKey("left"))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position -= transform.right * speed * Time.deltaTime;
+            transform.Translate(0.1f, 0f, 0f);
         }
     }
 }
