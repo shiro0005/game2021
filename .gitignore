@@ -63,4 +63,4 @@ Library/
 Logs/
 UserSettings/
 obj/
-.vsconfig/
+.vsconfig
