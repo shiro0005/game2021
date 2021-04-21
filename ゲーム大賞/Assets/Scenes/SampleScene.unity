@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 1102719397}
   - component: {fileID: 1102719396}
   - component: {fileID: 1102719395}
+  - component: {fileID: 1102719401}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -678,6 +679,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102719401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102719394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9045726a5bcba4d800419741f13d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  human: {fileID: 889010324}
+  animal: {fileID: 917991994}
+  plant: {fileID: 1465978815}
+  cool: 0
 --- !u!1001 &1459624309
 PrefabInstance:
   m_ObjectHideFlags: 0
