@@ -62,3 +62,6 @@ crashlytics-build.properties
 Library/
 Logs/
 UserSettings/
+ゲーム大賞/.vsconfig
+ゲーム大賞/obj
+
