@@ -5,32 +5,49 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
 
-    private float speed = 1.2f;
+    private float speed;
+    public Rigidbody rb;
+    public  bool isFloor;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得  
 
+    }
+
+    void OnCollisionStay(Collision collision)
+    {  //"Floor"タグが付いているオブジェクト
+
+        isFloor = true;
+        Debug.Log("当たってる");
+    }
+
+    void OnCollisionExit(Collision collision)
+    {  //"Floor"タグが付いているオブジェクト
+
+        isFloor = false;
+        Debug.Log("離れた");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (isFloor)
         {
-            transform.Translate(0f, 0f, 0.1f);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0f, 0f, -0.1f);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-0.1f, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(0.1f, 0f, 0f);
+            float x = Input.GetAxis("Horizontal");
+            if (x > 0.2 || x < -0.2)
+            {
+                speed = 10;
+                rb.velocity = new Vector3(x * speed, rb.velocity.y, rb.velocity.z);
+                Debug.Log("移動");
+            }
+            else
+            {
+                speed = 0;
+            }
+
         }
     }
+
 }

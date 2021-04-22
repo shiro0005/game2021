@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-public class GametoTitle : MonoBehaviour
+public class GtoT : MonoBehaviour
 {
 
     void OnCollisionEnter(Collision collision)
