@@ -8,50 +8,66 @@ public class Upper : MonoBehaviour
     public GameObject Hito;
     Rigidbody rb;
     private Vector3 normalpos;
-
+    private bool onber = false;
+    private bool gimmickswitch = false;
     //public GameObject upper;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        normalpos = transform.position;
+        normalpos = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(new Vector3(normalpos.x + Mathf.PingPong(Time.time, 2), normalpos.y, normalpos.z));
+        if (onber&&Input.GetKeyDown(KeyCode.Space))
+        {
+            gimmickswitch = true;
+        }
+
+        if (gimmickswitch)
+        {
+            rb.MovePosition(transform.position + transform.right*4.5f * Time.deltaTime);
+            //rb.MovePosition(new Vector3(normalpos.x + Mathf.PingPong(Time.time, 5), normalpos.y, normalpos.z));
+        }
     }
 
     void OnCollisionEnter(Collision col)
     {
-        //確認用
-        Debug.Log(col.gameObject.name);//衝突したobjの名前を取得
-
-        if (col.gameObject.name == "Human")
+        Debug.Log("notta");
+      
+        if (col.gameObject.name == "Target")
         {
-            Debug.Log("せいこう");
+            if (Hito.gameObject.activeInHierarchy)
+            {
+                onber = true;
+                Debug.Log("hito");
+            }
+            else
+            {
+                onber = false;
+                gimmickswitch = false;
+            }
             //Hito.gameObject.transform.SetParent(this.transform);
             //transform.parent = GameObject.Find("Human").transform;
             //Debug.Log("親子");
             //Destroy(Hito.GetComponent<Rigidbody>());
         }
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    Debug.Log("押せてる");
-        //    rb.MovePosition(new Vector3(normalpos.x + Mathf.PingPong(Time.time, 2), normalpos.y, normalpos.z));
-        //}
+
     }
 
     void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.name == "Human")
+        if (col.gameObject.name == "Target")
         {
-            Debug.Log("離れてる");
+            Debug.Log("hanareta");
+            onber = false;
+            gimmickswitch = false;
             //transform.SetParent(null);
             //gameObject.AddComponent<Rigidbody>();
-
         }
+        
     }
 }

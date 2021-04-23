@@ -20,14 +20,14 @@ public class Move : MonoBehaviour
     {  //"Floor"タグが付いているオブジェクト
 
         isFloor = true;
-        Debug.Log("当たってる");
+      
     }
 
     void OnCollisionExit(Collision collision)
     {  //"Floor"タグが付いているオブジェクト
 
         isFloor = false;
-        Debug.Log("離れた");
+        
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class Move : MonoBehaviour
             {
                 speed = 10;
                 rb.velocity = new Vector3(x * speed, rb.velocity.y, rb.velocity.z);
-                Debug.Log("移動");
+                //Debug.Log("移動");
             }
             else
             {
