@@ -17,9 +17,9 @@ public class Onof : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hflag = true;
+        Hflag = false;
         Aflag = false;
-        Pflag = false;
+        Pflag = true;
 
         this.human.SetActive(Hflag);
         this.animal.SetActive(Aflag);
