@@ -24,7 +24,7 @@ public class Planting : MonoBehaviour
     void Update()
     {
         // z ƒL[‚ª‰Ÿ‚³‚ê‚½
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
             // í‚Ì•¡»
