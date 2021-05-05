@@ -65,3 +65,5 @@ public class Onof : MonoBehaviour
         this.plant.SetActive(Pflag);//A•¨—L‚è
     }
 }
+
+
