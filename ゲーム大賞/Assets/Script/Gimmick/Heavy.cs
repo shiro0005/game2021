@@ -59,14 +59,14 @@ public class Heavy : MonoBehaviour
 
     private void OnCollisionExit(Collision col)
     {
-        if (who.gameObject.activeInHierarchy)
-        {
+        //if (who.gameObject.activeInHierarchy)
+        //{
             rb.constraints = RigidbodyConstraints.FreezePositionZ
             | RigidbodyConstraints.FreezePositionX
             | RigidbodyConstraints.FreezeRotationX
             | RigidbodyConstraints.FreezeRotationZ;
 
             Textflag = false;
-        }
+        //}
     }
 }
