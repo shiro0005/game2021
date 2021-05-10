@@ -8,10 +8,15 @@ public class Heavy : MonoBehaviour
     public GameObject mat;
     Rigidbody rb;
 
+    public GameObject FisText;
+    bool Textflag;
+
     // Start is called before the first frame update
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
+        Textflag = true;
+        this.FisText.SetActive(Textflag);
     }
 
     // Update is called once per frame
@@ -39,6 +44,7 @@ public class Heavy : MonoBehaviour
             {
                 mat.AddComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.FreezeRotation;
+                Textflag = false;
             }
         }
     }
@@ -48,6 +54,7 @@ public class Heavy : MonoBehaviour
         if (who.gameObject.activeInHierarchy)
         {
             Destroy(mat.GetComponent<Rigidbody>());
+            Textflag = false;
         }
     }
 }
