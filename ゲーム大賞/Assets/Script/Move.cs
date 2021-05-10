@@ -35,17 +35,22 @@ public class Move : MonoBehaviour
     {
         if (isFloor)
         {
-            float x = Input.GetAxis("Horizontal");
-            if (x > 0.2 || x < -0.2)
+            
+            //float x = Input.GetAxis("Horizontal");
+            
+            if (Input.GetKey(KeyCode.D))
             {
-                speed = 10;
-                rb.velocity = new Vector3(x * speed, rb.velocity.y, rb.velocity.z);
-                //Debug.Log("ˆÚ“®");
+                speed = 5;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                speed = -5;
             }
             else
             {
-                speed = 0;
+                speed = 0.0f;
             }
+            rb.velocity = new Vector3(speed, rb.velocity.y, rb.velocity.z);
 
         }
     }
