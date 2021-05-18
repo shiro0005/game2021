@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
     }
     //
 
-    public void GetDeathCount()
+    public int GetDeathCount()
     {
         return DeathCount;
     }
