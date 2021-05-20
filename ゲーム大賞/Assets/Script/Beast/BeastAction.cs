@@ -52,6 +52,7 @@ public class BeastAction : MonoBehaviour
             //{
             //    speed = 0;
             //}
+
             if (Input.GetKey(KeyCode.D))
             {
                 speed = 8;
