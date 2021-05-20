@@ -67,6 +67,7 @@ public class testmove : MonoBehaviour
                 Prb2D.velocity = Prb2D.velocity * lowPower;//‘¬“x‚ðŒˆ‚ß‚é
             }
         }
+
         /*if (!isMove)
         {
             if (Input.GetMouseButtonDown(0))
