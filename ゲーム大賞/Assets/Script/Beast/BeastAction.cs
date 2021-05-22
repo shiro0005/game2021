@@ -7,6 +7,8 @@ public class BeastAction : MonoBehaviour
     [SerializeField] private GameObject Player;
     private Move PlayerAction;
 
+    public AudioClip jumpSE;
+
     
     private float speed;
     private float gravity;
@@ -37,6 +39,7 @@ public class BeastAction : MonoBehaviour
             {
                 Vector3 force = new Vector3(0.0f, 6.0f, 0.0f);  // óÕÇê›íË
                 PlayerAction.rb.AddForce(force, ForceMode.Impulse);          // óÕÇâ¡Ç¶ÇÈ
+                SE.instance.PlaySE(jumpSE);
                 //Debug.Log("íµÇÒÇæ!");
             }
             //-----------------------------------------------------------------------------
