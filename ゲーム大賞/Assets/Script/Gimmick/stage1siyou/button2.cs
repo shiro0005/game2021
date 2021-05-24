@@ -44,7 +44,7 @@ public class button2 : MonoBehaviour
                 Debug.Log("箱が乗ってる");
                 open = true;
                 //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-                havescript.GetComponent<Door2>().DoirOpen();
+                havescript.GetComponent<Door2>().DoirOpen2();
             }
         }
     }
@@ -66,7 +66,7 @@ public class button2 : MonoBehaviour
             Debug.Log("箱が離れた");
             open = false;
             //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-            havescript.GetComponent<Door2>().DoirClose();
+            havescript.GetComponent<Door2>().DoirClose2();
         }
     }
 }
