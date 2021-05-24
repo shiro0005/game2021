@@ -60,16 +60,28 @@ public class Human2D : MonoBehaviour
 
     void HumanJump()
     {
-        if (Input.GetKeyDown("space"))
+        if (isFloor)
         {
-            Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // 力を設定
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
-            Debug.Log("跳んだ!");
+            if (Input.GetKeyDown("space"))
+            {
+                Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // 力を設定
+                rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
+                Debug.Log("跳んだ!");
+            }
         }
     }
 
 
-    void OnCollision2DStay(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            isFloor = true;
+            Debug.Log("着地!");
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
@@ -77,7 +89,9 @@ public class Human2D : MonoBehaviour
             Debug.Log("着地中!");
         }
     }
-    void OnCollision2DExit(Collision2D collision)
+    
+
+    private void OnCollisionExit2D(Collision2D collision)
     {  //"Floor"タグが付いているオブジェクト
         if (collision.gameObject.tag == "Floor")
         {

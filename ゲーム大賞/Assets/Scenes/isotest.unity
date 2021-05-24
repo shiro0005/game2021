@@ -581,7 +581,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!33 &1491721942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -962,5 +962,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b362a85d19005df45a2b8f6e066a5f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1491721940}
-  jumpSE: {fileID: 8300000, guid: d44130bb1c6b8c54ab96509cf396fbff, type: 3}
