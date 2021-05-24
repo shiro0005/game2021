@@ -11,13 +11,13 @@ public class Human2D : MonoBehaviour
 
     [SerializeField] private GameObject Player;
 
-    private Move PlayerAction;
+    //private Move PlayerAction;
     //Rigidbody2D Brb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2D = this.GetComponent<Rigidbody2D>();  // rigidbody‚ðŽæ“¾   
+        rb2D = Player.GetComponent<Rigidbody2D>();  // rigidbody‚ðŽæ“¾   
 
         //PlayerAction = Player.GetComponent<Move>();
         //Brb = PlayerAction.rb;
@@ -74,6 +74,7 @@ public class Human2D : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = true;
+            Debug.Log("’…’n’†!");
         }
     }
     void OnCollision2DExit(Collision2D collision)
@@ -81,6 +82,7 @@ public class Human2D : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = false;
+            Debug.Log("—£—¤!");
         }
     }
 
