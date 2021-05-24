@@ -10,7 +10,7 @@ public class GametoTitle : MonoBehaviour
     private bool flag = false;
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject.GetComponent<Move>());
+        //Destroy(collision.gameObject.GetComponent<Move>());
         gameclear.GetComponent<Text>();
         gameclear.SetActive(true);
         flag = true;
