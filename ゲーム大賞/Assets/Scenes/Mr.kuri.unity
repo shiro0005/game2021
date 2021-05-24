@@ -1616,11 +1616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3727213422214793533, guid: f3bbb5dc67f71a44c89e83c967cd0f9d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3727213422214793533, guid: f3bbb5dc67f71a44c89e83c967cd0f9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3727213422214793533, guid: f3bbb5dc67f71a44c89e83c967cd0f9d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2733,6 +2733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2113358930}
+  jumpSE: {fileID: 0}
 --- !u!135 &2091804628
 SphereCollider:
   m_ObjectHideFlags: 0
