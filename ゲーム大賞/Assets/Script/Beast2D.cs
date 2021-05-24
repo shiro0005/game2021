@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beast2D : MonoBehaviour
 {
-    [SerializeField]private Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
     
 
     public AudioClip jumpSE;
@@ -23,8 +23,6 @@ public class Beast2D : MonoBehaviour
         //PlayerAction = Player.GetComponent<Move>();
 
         //Brb = PlayerAction.rb;
-        rb = this.GetComponent<Rigidbody2D>();
-
     }
 
     void OnCollisionStay2D(Collision2D collision)

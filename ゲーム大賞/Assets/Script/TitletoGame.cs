@@ -10,7 +10,7 @@ public class TitletoGame : MonoBehaviour
     // ボタンが押された場合、今回呼び出される関数
     public void OnClick()
     {
-        SceneManager.LoadScene("βScene");
+        SceneManager.LoadScene("stage1");
         Debug.Log("押された!");  // ログを出力
     }
 }

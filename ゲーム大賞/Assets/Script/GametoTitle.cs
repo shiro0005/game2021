@@ -8,7 +8,7 @@ public class GametoTitle : MonoBehaviour
 {
     public GameObject gameclear;
     private bool flag = false;
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //Destroy(collision.gameObject.GetComponent<Move>());
         gameclear.GetComponent<Text>();
