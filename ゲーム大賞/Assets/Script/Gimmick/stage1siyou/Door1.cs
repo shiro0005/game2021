@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door1 : MonoBehaviour
 {
     Rigidbody rb;
-    bool flag;
+    bool Oneflag;
 
     float speed = 1.0f;
     //public float BeginY;
@@ -19,36 +19,36 @@ public class Door1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flag = false;
+        Oneflag = false;
         rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (flag == true)
+        //if (Oneflag == true)
         //{
-        //    DoirOpen();
+        //    DoirOpen1();
         //}
 
-        //if (flag == false)
+        //if (Oneflag == false)
         //{
-        //    DoirClose();
+        //    DoirClose1();
         //}
     }
 
-    public void DoirOpen()
+    public void DoirOpen1()
     {
-        flag = true;
+        Oneflag = true;
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, direction, step);
 
         //transform.position = new Vector3(0f, MoverY, 0f);
     }
 
-    public void DoirClose()
+    public void DoirClose1()
     {
-        flag = false;
+        Oneflag = false;
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, down, step);
 
