@@ -5,6 +5,7 @@ using UnityEngine;
 public class Human2D : MonoBehaviour
 {
     private float speed;
+    public float Speed;
     public float jamp;
     Rigidbody2D rb2D;
     bool isFloor = true;
@@ -38,7 +39,7 @@ public class Human2D : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             if (x > 0.2 || x < -0.2)
             {
-                speed = 10;
+                speed = Speed;
                 rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
             }
