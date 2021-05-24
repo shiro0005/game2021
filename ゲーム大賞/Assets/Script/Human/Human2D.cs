@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Human : MonoBehaviour
+public class Human2D : MonoBehaviour
 {
     private float speed;
-    public Rigidbody rb;
-    bool isFloor;
+    public float jamp;
+    Rigidbody2D rb2D;
+    bool isFloor = true;
 
     [SerializeField] private GameObject Player;
 
     private Move PlayerAction;
-    //Rigidbody Brb;
+    //Rigidbody2D Brb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得   
+        rb2D = this.GetComponent<Rigidbody2D>();  // rigidbodyを取得   
 
-        PlayerAction = Player.GetComponent<Move>();
+        //PlayerAction = Player.GetComponent<Move>();
         //Brb = PlayerAction.rb;
 
     }
@@ -26,7 +27,8 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HumanMove();
+        HumanJump();
     }
 
     void HumanMove()
@@ -37,7 +39,7 @@ public class Human : MonoBehaviour
             if (x > 0.2 || x < -0.2)
             {
                 speed = 10;
-                rb.velocity = new Vector3(x * speed, rb.velocity.y, rb.velocity.z);
+                rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("移動");
             }
             else
@@ -47,7 +49,7 @@ public class Human : MonoBehaviour
         }
     }
 
-    void HumanAction(Collision collision)
+    void HumanAction(Collision2D collision)
     {
         if (Input.GetKeyDown("space"))
         {
@@ -61,21 +63,20 @@ public class Human : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // 力を設定
-            PlayerAction.rb.AddForce(force, ForceMode.Impulse);// 力を加える
+            rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
             Debug.Log("跳んだ!");
         }
     }
 
 
-    void OnCollisionStay(Collision collision)
+    void OnCollision2DStay(Collision2D collision)
     {
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = true;
         }
     }
-
-    void OnCollisionExit(Collision collision)
+    void OnCollision2DExit(Collision2D collision)
     {  //"Floor"タグが付いているオブジェクト
         if (collision.gameObject.tag == "Floor")
         {
@@ -89,4 +90,3 @@ public class Human : MonoBehaviour
     }
 
 }
-
