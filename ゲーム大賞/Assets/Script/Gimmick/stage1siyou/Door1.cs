@@ -11,15 +11,17 @@ public class Door1 : MonoBehaviour
     //public float BeginY;
     //public float MoverY;
 
-    public Vector2 direction = new Vector3(0.0f, 5.0f);
-    public Vector2 down = new Vector3(0.0f, 2.5f);
+    public Vector2 direction = new Vector2(0.0f, 5.0f);
+    public Vector2 down = new Vector2(0.0f, 2.5f);
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Oneflag = false;
+        //取り合えずコメントアウト
+        //Oneflag = false;
+
         rb = this.GetComponent<Rigidbody>();
     }
 
@@ -39,19 +41,31 @@ public class Door1 : MonoBehaviour
 
     public void DoirOpen1()
     {
-        Oneflag = true;
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, direction, step);
+        //Oneflag = true;
+
+        //float step = speed * Time.deltaTime;
+        //transform.position = Vector2.MoveTowards(transform.position, direction, step);
+        //transform.position = Vector2.MoveTowards(transform.position, direction, step);
+
+        //transform.position += new Vector3(0f, 0.1f, 0f);
+        //transform.position += new Vector3(0f, 5.0f, 0f);
+
+        transform.Translate(new Vector2(0, 5.0f));
 
         //transform.position = new Vector3(0f, MoverY, 0f);
     }
 
     public void DoirClose1()
     {
-        Oneflag = false;
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, down, step);
+        //Oneflag = false;
 
+        //float step = speed * Time.deltaTime;
+        //transform.position = Vector2.MoveTowards(transform.position, down, step);
+        //transform.position = down;
         //transform.position = new Vector3(0f, BeginY, 0f);
+
+        transform.Translate(new Vector2(0, 2.5f));
+
+        //transform.position += new Vector3(0f, 2.5f, 0f);
     }
 }

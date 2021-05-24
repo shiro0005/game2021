@@ -23,7 +23,7 @@ public class box1 : MonoBehaviour
         //    | RigidbodyConstraints2D.FreezePositionX
         //    | RigidbodyConstraints.FreezeRotationX
         //    | RigidbodyConstraints.FreezeRotationZ;
-        rd2d.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+        rd2d.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX/*| RigidbodyConstraints2D.FreezeRotation*/;
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class box1 : MonoBehaviour
         if (who.gameObject.activeInHierarchy)
         {
             Debug.Log("colÇ™êGÇÍÇƒÇ¢ÇÈ");
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.E))
             {
                 //3DópÇÃrigidbodyîõÇË
                 //rb.constraints = RigidbodyConstraints.None;
@@ -55,7 +55,7 @@ public class box1 : MonoBehaviour
                 //| RigidbodyConstraints.FreezeRotationX
                 //| RigidbodyConstraints.FreezeRotationZ;
 
-                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
                 Textflag = true;
             }
@@ -70,8 +70,8 @@ public class box1 : MonoBehaviour
         //| RigidbodyConstraints.FreezeRotationX
         //| RigidbodyConstraints.FreezeRotationZ;
 
-        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition 
-            | RigidbodyConstraints2D.FreezeRotation;
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX 
+            /*| RigidbodyConstraints2D.FreezeRotation*/;
 
         Textflag = false;
 
