@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Door1 : MonoBehaviour
 {
-    Rigidbody rb;
-    bool Oneflag;
+    //Rigidbody rb;
+    //bool Oneflag;
 
-    float speed = 1.0f;
+    //float speed = 1.0f;
     //public float BeginY;
     //public float MoverY;
 
@@ -22,7 +22,7 @@ public class Door1 : MonoBehaviour
         //取り合えずコメントアウト
         //Oneflag = false;
 
-        rb = this.GetComponent<Rigidbody>();
+        //rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

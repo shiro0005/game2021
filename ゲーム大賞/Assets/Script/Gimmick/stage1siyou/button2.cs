@@ -37,7 +37,7 @@ public class button2 : MonoBehaviour
         //}
 
         //î†ÇÃèÍçá
-        if (col.gameObject.name == "box")
+        if (col.gameObject.name == "box(1)")
         {
             if (box.gameObject.activeInHierarchy)
             {
