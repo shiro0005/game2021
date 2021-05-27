@@ -8,72 +8,49 @@ public class box1 : MonoBehaviour
     public GameObject mat;
     Rigidbody2D rb2d;
 
-    public GameObject FisText;
-    bool Textflag;
+    //public GameObject FisText;
+    //bool Textflag;
 
     // Start is called before the first frame update
     void Start()
     {
-        Textflag = true;
-        FisText.SetActive(Textflag);
-        //rb = GetComponent<Rigidbody>();
+        //Textflag = true;
+        //FisText.SetActive(Textflag);
         Rigidbody2D rd2d = GetComponent<Rigidbody2D>();
 
-        //rb2d.constraints = RigidbodyConstraints2D.FreezePositionX
-        //    | RigidbodyConstraints2D.FreezePositionX
-        //    | RigidbodyConstraints.FreezeRotationX
-        //    | RigidbodyConstraints.FreezeRotationZ;
-        rd2d.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX/*| RigidbodyConstraints2D.FreezeRotation*/;
+        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX
+            | RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //書かない
     }
-    //void GimmickStart()
-    //{
-    //    gameObject.AddComponent<Rigidbody>();
-    //}
-
-    //void GimmickEnd()
-    //{
-    //    Destroy(mat.GetComponent<Rigidbody>());
-    //}
-
+ 
     //試用
     void OnCollisionStay2D(Collision2D col)
     {
         if (who.gameObject.activeInHierarchy)
         {
-            Debug.Log("colが触れている");
+            Debug.Log("人が触れている");
             if (Input.GetKey(KeyCode.E))
             {
-                //3D用のrigidbody縛り
-                //rb.constraints = RigidbodyConstraints.None;
-                //rb.constraints = RigidbodyConstraints.FreezePositionZ
-                //| RigidbodyConstraints.FreezeRotationX
-                //| RigidbodyConstraints.FreezeRotationZ;
 
-                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-                Textflag = true;
+                //Textflag = false;
             }
         }
     }
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        //3D用のrigidbody縛り
-        //rb.constraints = RigidbodyConstraints.FreezePositionZ
-        //| RigidbodyConstraints.FreezePositionX
-        //| RigidbodyConstraints.FreezeRotationX
-        //| RigidbodyConstraints.FreezeRotationZ;
 
         this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX 
-            /*| RigidbodyConstraints2D.FreezeRotation*/;
+            | RigidbodyConstraints2D.FreezeRotation;
 
-        Textflag = false;
+        //Textflag = true;
 
     }
 }

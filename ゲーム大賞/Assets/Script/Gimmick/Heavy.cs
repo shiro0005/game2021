@@ -44,7 +44,7 @@ public class Heavy : MonoBehaviour
     {
         if (who.gameObject.activeInHierarchy)
         {
-            Debug.Log("col‚ªG‚ê‚Ä‚¢‚é");
+            Debug.Log("l‚ªG‚ê‚Ä‚¢‚é");
             if (Input.GetKey(KeyCode.Space))
             {
                 //rb.constraints = RigidbodyConstraints.None;
