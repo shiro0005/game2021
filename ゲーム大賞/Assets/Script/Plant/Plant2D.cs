@@ -4,35 +4,37 @@ using UnityEngine;
 
 public class Plant2D : MonoBehaviour
 {
-    [SerializeField] GameObject Seed;
+    [SerializeField] GameObject Seed;//飛ばす種
 
-    private float power=10.0f;
-    private float lowPower=1.0f;
+    //移動に使う力
+    private float power = 10.0f;
+    private float lowPower = 1.0f;
 
-    public GameObject Player;
+    public GameObject Player;//プレイヤー
+    public GameObject child;//plantの子オブジェクトを設定
 
-    private Rigidbody2D Prb2D;
-    private Vector2 Pvec = new Vector2(0, 0);
+    private Rigidbody2D Prb2D;//プレイヤーのリキッドボディを入れる
+    private Vector2 Pvec = new Vector2(0, 0);//移動のベクトル
+    private Vector2 PvecData = new Vector2(0, 0);//移動ベクトル保存用
 
-    private Vector2 movePosition;
-    private Vector2 playerPosition;
-    private Vector2 addPower;
+    private Vector2 movePosition;//目的地
+    private Vector2 playerPosition;//現在地
+    private Vector2 addPower;//必要な力（計算用）
+    private float angle = 0;//ツタ伸ばしの角度
+    // private Planting planting;
 
-    private Planting planting;
-
+    private int flag = 0;//ケース用
 
     // Start is called before the first frame update
     void Start()
     {
-        //mouseControl = mouseObject.GetComponent<Mouse>();
-
-        //playerAction = playerObject.GetComponent<Player>();
         Prb2D = Player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //キー入力判定
         if (Input.GetKey(KeyCode.W))
         {
             Pvec.y = 1.0f;
@@ -55,12 +57,85 @@ public class Plant2D : MonoBehaviour
             Pvec.x = 0.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&flag==0)
         {
             if (Pvec.x != 0.0f || Pvec.y != 0.0f)
             {
+                flag = 1;
+                PvecData = Pvec;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            
+            this.GetComponent<Planting>().Plant(Pvec.x, Pvec.y, Seed, Player.transform);//種飛ばし
+
+        }
+
+        switch (flag)
+        {
+            case 0:
+                break;
+
+            case 1:
+                
+                //角度設定
+                if (PvecData.x == 1.0f)
+                {
+                    angle = 90f;
+                    if (PvecData.y == 1.0f)
+                    {
+                        angle = 45f;
+                    }
+                }
+                else if (PvecData.x == -1.0f)
+                {
+                    angle = -90f;
+                    if (PvecData.y == 1.0f)
+                    {
+                        angle = -45f;
+                    }
+                }
+
+                //ツタ伸ばし
+                child.GetComponent<tuta>().Growup(angle);
+
+                
+                if (child.GetComponent<tuta>().GetScale()> 0.25f)//ツタ限界
+                {
+                    flag = 2;
+                }
+                else if (child.GetComponent<tuta>().GetFlag() == 1)//ツタがつかめる
+                {
+                    flag = 4;
+                }
+                else if (child.GetComponent<tuta>().GetFlag() == 2)//ツタがオブジェクトにぶつかり戻る
+                {
+                    flag = 2;
+                }
+                break;
+
+            case 2:
+                //ツタ戻し
+                child.GetComponent<tuta>().Growdown(angle);
+
+
+                if(child.GetComponent<tuta>().GetScale() <= 0.003f)//ツタ元通り
+                {
+                    flag = 3;
+                }
+                break;
+
+            case 3:
+                angle = 0.0f;//元通り
+                flag = 0;
+                break;
+
+            case 4:
+                //Plant移動処理
                 playerPosition = Player.transform.position;
-                movePosition = new Vector2(Player.transform.position.x + Pvec.x, Player.transform.position.y + Pvec.y);
+                movePosition = new Vector2(Player.transform.position.x + PvecData.x, Player.transform.position.y + PvecData.y);
                 addPower.x = movePosition.x - playerPosition.x;
                 addPower.y = movePosition.y - playerPosition.y;
                 addPower = addPower.normalized;
@@ -70,12 +145,10 @@ public class Plant2D : MonoBehaviour
                 {
                     Prb2D.velocity = Prb2D.velocity * lowPower;//速度を決める
                 }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            this.GetComponent<Planting>().Plant(Pvec.x,Pvec.y,Seed, Player.transform);
-            
+                flag = 2;
+                break;
+            default:
+                break;
         }
     }
 }

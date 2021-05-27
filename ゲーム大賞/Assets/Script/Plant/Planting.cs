@@ -18,7 +18,7 @@ public class Planting : MonoBehaviour
     {
         if (x == 0)
         {
-            return;
+            x = 0.2f;
         }
 
         // í‚Ì•¡»
@@ -26,7 +26,7 @@ public class Planting : MonoBehaviour
 
         Vector2 force;
 
-        force = new Vector2(x, y) * speed;
+        force = new Vector2(x, y*1.5f) * speed;
 
         // Rigidbody‚É—Í‚ğ‰Á‚¦‚Ä”­Ë
         seeds.GetComponent<Rigidbody2D>().AddForce(force);
