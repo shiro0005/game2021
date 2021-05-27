@@ -13,6 +13,7 @@ public class GametoTitle : MonoBehaviour
         //Destroy(collision.gameObject.GetComponent<Move>());
         gameclear.GetComponent<Text>();
         gameclear.SetActive(true);
+        FadeManager.FadeOut(0);
         flag = true;
        
     }
@@ -22,8 +23,10 @@ public class GametoTitle : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                
                 Debug.Log("ÉSÅ[ÉãÅI");
-                SceneManager.LoadScene("Title");
+               SceneManager.LoadScene("Title");
+                
             }
         }
     }
