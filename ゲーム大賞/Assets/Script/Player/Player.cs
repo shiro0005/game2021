@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     public GameObject animal;
     public GameObject plant;
 
-    public float cool;
+    //public float cool;
+
+    public AudioClip deathSE;
 
     bool Hflag;
     bool Aflag;
@@ -93,6 +95,8 @@ public class Player : MonoBehaviour
     {
         Debug.Log("“]¶‚µ‚ë");
         PlayerReincarnation();
+
+        SE.instance.PlaySE(deathSE);
     }
     //
 

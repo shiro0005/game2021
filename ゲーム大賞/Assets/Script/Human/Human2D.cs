@@ -8,21 +8,20 @@ public class Human2D : MonoBehaviour
     public float Speed;
     public float jamp;
     Rigidbody2D rb2D;
-    bool isFloor = true;
+    public bool isFloor = true;
+    public AudioClip jumpSE;
 
     [SerializeField] private GameObject Player;
 
-    //private Move PlayerAction;
-    //Rigidbody2D Brb;
+    private Animator anim = null;
 
+    
     // Start is called before the first frame update
     void Start()
     {
         rb2D = Player.GetComponent<Rigidbody2D>();  // rigidbody‚ðŽæ“¾   
 
-        //PlayerAction = Player.GetComponent<Move>();
-        //Brb = PlayerAction.rb;
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,23 +29,58 @@ public class Human2D : MonoBehaviour
     {
         HumanMove();
         HumanJump();
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            anim.SetBool("osu", true);
+        }
+        else
+        {
+            anim.SetBool("osu", false);
+        }
+
+
+        if (!isFloor)
+        {
+            Debug.Log("—£‚ê‚Ä‚é");
+        }
     }
 
     void HumanMove()
     {
         if (isFloor)
         {
+            Vector3 scale = transform.localScale;
+
             float x = Input.GetAxis("Horizontal");
-            if (x > 0.2 || x < -0.2)
+            if (x > 0.2 )
             {
                 speed = Speed;
                 rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
+
+                anim.SetBool("run", true);
+
+                scale.x = 50;
             }
+            else if( x < -0.2)
+            {
+                speed = Speed;
+                rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
+                //Debug.Log("ˆÚ“®");
+
+                anim.SetBool("run", true);
+
+                scale.x = -50;
+            }
+
             else
             {
                 speed = 0;
+                anim.SetBool("run", false);
             }
+
+            transform.localScale = scale;
         }
     }
 
@@ -68,6 +102,8 @@ public class Human2D : MonoBehaviour
                 Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // —Í‚ðÝ’è
                 rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
                 Debug.Log("’µ‚ñ‚¾!");
+                SE.instance.PlaySE(jumpSE);
+                anim.SetBool("isJamp", true);
             }
         }
     }
@@ -78,7 +114,8 @@ public class Human2D : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = true;
-            Debug.Log("’…’n!");
+
+            anim.SetBool("isJamp", false);
         }
     }
 
@@ -87,7 +124,6 @@ public class Human2D : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = true;
-            Debug.Log("’…’n’†!");
         }
     }
     
@@ -97,7 +133,7 @@ public class Human2D : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             isFloor = false;
-            Debug.Log("—£—¤!");
+            Debug.Log("—£—¤");
         }
     }
 

@@ -12,6 +12,9 @@ public class Beast2D : MonoBehaviour
     private float gravity;
     private bool isFloor;
 
+    private Animator anim = null;
+
+
     //GameObject Player; //Playerちゃんそのものが入る変数
 
     //Move script; //Moveが入る変数
@@ -19,10 +22,17 @@ public class Beast2D : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+    }
 
-        //PlayerAction = Player.GetComponent<Move>();
-
-        //Brb = PlayerAction.rb;
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            isFloor = true;
+            anim.SetBool("isJamp", false);
+            anim.SetBool("isFry", false);
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -47,13 +57,19 @@ public class Beast2D : MonoBehaviour
         //プレイヤーが地面と接触してる時=========================================================================
         if (isFloor)
         {
+            Vector3 scale = transform.localScale;
+
             //接触した状態でspaceキーが押されたときジャンプ--------------------------------
             if (Input.GetKeyDown("space"))
             {
-                Vector2 force = new Vector3(0.0f, 6.0f);     // 力を設定
+                Vector2 force = new Vector3(0.0f, 10.0f);     // 力を設定
                 rb.AddForce(force, (ForceMode2D)ForceMode.Impulse);// 力を加える
                 SE.instance.PlaySE(jumpSE);
                 //Debug.Log("跳んだ!");
+
+                anim.SetBool("isJamp", true);
+                isFloor = false;
+
             }
 
             //-----------------------------------------------------------------------------
@@ -73,16 +89,25 @@ public class Beast2D : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 speed = 8;
+                anim.SetBool("isRun", true);
+                scale.x = 80;
+
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 speed = -8;
+                anim.SetBool("isRun", true);
+                scale.x = -80;
+
             }
             else
             {
                 speed = 0.0f;
+                anim.SetBool("isRun", false);
             }
+
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            transform.localScale = scale;
             //-----------------------------------------------------------------------------
         }
         //==========================================================================================================
@@ -92,12 +117,15 @@ public class Beast2D : MonoBehaviour
         //プレイヤーが空中にいるとき================================================================================
         if (!isFloor)
         {
+            Vector3 scale = transform.localScale;
 
             //----------------------------------------------------------------------------------
 
             //Eキーを押してる間だけ滑空---------------------------------------------------------
             if (Input.GetKey(KeyCode.E))
             {
+                anim.SetBool("isFry", true);
+
                 // gravity = -1.0f;  //値を下げれば重くなる
                 rb.velocity = new Vector2(rb.velocity.x, -0.3f);
 
@@ -105,10 +133,12 @@ public class Beast2D : MonoBehaviour
                 if (Input.GetKey(KeyCode.D))
                 {
                     speed = 8;
+                    scale.x = 80;
                 }
                 else if (Input.GetKey(KeyCode.A))
                 {
                     speed = -8;
+                    scale.x = -80;
                 }
                 else
                 {
@@ -117,6 +147,13 @@ public class Beast2D : MonoBehaviour
 
                 rb.velocity = new Vector3(speed, rb.velocity.y);
             }
+            else if (Input.GetKeyUp(KeyCode.E))
+            {
+                anim.SetBool("isFry", false);
+            }
+
+            transform.localScale = scale;
+
             //----------------------------------------------------------------------------------
         }
         //============================================================================================================
