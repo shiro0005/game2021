@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class button1 : MonoBehaviour
 {
-    GameObject havescript;
-    //public GameObject who;//人
     public GameObject box;//錘
     public bool open;
+    public GameObject child;
 
     // Start is called before the first frame update
     void Start()
     {
-        havescript = GameObject.Find("door");
         open = false;
+        Debug.Log("Child:" + child.name);//子のログ
     }
 
     // Update is called once per frame
@@ -24,18 +23,6 @@ public class button1 : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D col)
     {
-        //人の場合
-        //if (col.gameObject.name == "Human")
-        //{
-        //    if (who.gameObject.activeInHierarchy)
-        //    {
-        //        Debug.Log("人が乗ってる");
-        //        open = true;
-        //        //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-        //        havescript.GetComponent<Mover>().DoirOpen();
-        //    }
-        //}
-
         //箱の場合
         if (col.gameObject.name == "box")
         {
@@ -44,29 +31,20 @@ public class button1 : MonoBehaviour
                 Debug.Log("箱が乗ってる");
                 open = true;
                 //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-                havescript.GetComponent<Door1>().DoirOpen1();
+                child.GetComponent<Door1>().DoirOpen1();
             }
         }
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        //人の場合
-        //if (who.gameObject.activeInHierarchy)
-        //{
-        //    Debug.Log("人が離れた");
-        //    open = false;
-        //    //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-        //    havescript.GetComponent<Mover>().DoirClose();
-        //}
-
         //箱の場合
         if (box.gameObject.activeInHierarchy)
         {
             Debug.Log("箱が離れた");
             open = false;
             //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
-            havescript.GetComponent<Door1>().DoirClose1();
+            child.GetComponent<Door1>().DoirClose1();
         }
     }
 }
