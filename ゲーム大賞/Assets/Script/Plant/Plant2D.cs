@@ -21,14 +21,17 @@ public class Plant2D : MonoBehaviour
     private Vector2 playerPosition;//現在地
     private Vector2 addPower;//必要な力（計算用）
     private float angle = 0;//ツタ伸ばしの角度
-    // private Planting planting;
+ 
 
     private int flag = 0;//ケース用
+
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         Prb2D = Player.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -68,9 +71,13 @@ public class Plant2D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
+            animator.SetBool("isPlanting", true);
             this.GetComponent<Planting>().Plant(Pvec.x, Pvec.y, Seed, Player.transform);//種飛ばし
 
+        }
+        else
+        {
+            animator.SetBool("isPlanting", false);
         }
 
         switch (flag)
