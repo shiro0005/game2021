@@ -24,8 +24,8 @@ public class FadeManager : MonoBehaviour
     private static float fadeTime = 0.2f;
 
     //遷移先のシーン番号
-    private static int nextScene = 1;
-
+   public static int nextScene = 1;
+    //public static string Scene = "Title";
     //フェード用のCanvasとImage生成
     static void Init()
     {
