@@ -11,10 +11,10 @@ public class GametoTitle : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Destroy(collision.gameObject.GetComponent<Move>());
-        gameclear.GetComponent<Text>();
-        gameclear.SetActive(true);
-        FadeManager.FadeOut(0);
-        flag = true;
+       // gameclear.GetComponent<Text>();
+       // gameclear.SetActive(true);
+        FadeManager.FadeOut(2);
+       // flag = true;
        
     }
     void Update()
@@ -25,8 +25,8 @@ public class GametoTitle : MonoBehaviour
             {
                 
                 Debug.Log("ÉSÅ[ÉãÅI");
-               SceneManager.LoadScene("Title");
-                
+               //SceneManager.LoadScene("Title");
+                //FadeManager.FadeOut(0);
             }
         }
     }

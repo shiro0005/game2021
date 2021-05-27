@@ -9,7 +9,8 @@ public class GtoT : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        SceneManager.LoadScene("Title");
+        //SceneManager.LoadScene("Title");
+        FadeManager.FadeOut(0);
         Debug.Log("“–‚½‚Á‚½!");
     }
 }

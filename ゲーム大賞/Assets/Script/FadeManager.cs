@@ -24,8 +24,8 @@ public class FadeManager : MonoBehaviour
     private static float fadeTime = 0.2f;
 
     //遷移先のシーン番号
-    private static int nextScene = 1;
-
+    //public SceneObject m_nextScene;
+    public static int Scene = 1;
     //フェード用のCanvasとImage生成
     static void Init()
     {
@@ -60,7 +60,7 @@ public class FadeManager : MonoBehaviour
     public static void FadeOut(int n)
     {
         if (fadeImage == null) Init();
-        nextScene = n;
+        Scene = n;
         fadeImage.color = Color.clear;
         fadeCanvas.enabled = true;
         isFadeOut = true;
@@ -97,7 +97,7 @@ public class FadeManager : MonoBehaviour
                 alpha = 1.0f;
 
                 //次のシーンへ遷移
-                SceneManager.LoadScene(nextScene);
+                SceneManager.LoadScene(Scene);
             }
 
             //フェード用Imageの色・透明度設定
