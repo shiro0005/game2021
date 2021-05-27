@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Plant
+  - fade
   layers:
   - Default
   - TransparentFX
