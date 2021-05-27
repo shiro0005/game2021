@@ -18,8 +18,8 @@ public class Onof : MonoBehaviour
     void Start()
     {
         Hflag = false;
-        Aflag = false;
-        Pflag = true;
+        Aflag = true;
+        Pflag = false;
 
         this.human.SetActive(Hflag);
         this.animal.SetActive(Aflag);

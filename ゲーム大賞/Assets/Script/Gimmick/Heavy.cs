@@ -8,10 +8,20 @@ public class Heavy : MonoBehaviour
     public GameObject mat;
     Rigidbody rb;
 
+    public GameObject FisText;
+    bool Textflag;
+
     // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
+        Textflag = true;
+        FisText.SetActive(Textflag);
+        rb = GetComponent<Rigidbody>();
+
+        rb.constraints = RigidbodyConstraints.FreezePositionZ
+            | RigidbodyConstraints.FreezePositionX
+            | RigidbodyConstraints.FreezeRotationX
+            | RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
@@ -37,17 +47,25 @@ public class Heavy : MonoBehaviour
             Debug.Log("colÇ™êGÇÍÇƒÇ¢ÇÈ");
             if (Input.GetKey(KeyCode.Space))
             {
-                mat.AddComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.FreezeRotation;
+                //rb.constraints = RigidbodyConstraints.None;
+                rb.constraints = RigidbodyConstraints.FreezePositionZ
+                | RigidbodyConstraints.FreezeRotationX
+                | RigidbodyConstraints.FreezeRotationZ;
+
+                Textflag = true;
             }
         }
     }
 
     private void OnCollisionExit(Collision col)
     {
-        if (who.gameObject.activeInHierarchy)
-        {
-            Destroy(mat.GetComponent<Rigidbody>());
-        }
+        
+            rb.constraints = RigidbodyConstraints.FreezePositionZ
+            | RigidbodyConstraints.FreezePositionX
+            | RigidbodyConstraints.FreezeRotationX
+            | RigidbodyConstraints.FreezeRotationZ;
+
+            Textflag = false;
+       
     }
 }
