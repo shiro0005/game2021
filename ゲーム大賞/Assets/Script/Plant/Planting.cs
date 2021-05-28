@@ -32,7 +32,7 @@ public class Planting : MonoBehaviour
         seeds.GetComponent<Rigidbody2D>().AddForce(force);
 
         // éÌÇÃà íuÇí≤êÆ
-        seeds.transform.position = new Vector2(plantTop.position.x+1.0f, plantTop.position.y + 3.5f);
+        seeds.transform.position = new Vector2(plantTop.position.x, plantTop.position.y + 3.5f);
 
     }
 }
