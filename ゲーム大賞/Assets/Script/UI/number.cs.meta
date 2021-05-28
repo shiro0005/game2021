@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5d23304f0fb260b49a4578e10b11d197
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - texture0: {fileID: 2800000, guid: 99ec1d0954a52904db3354025dc7c61d, type: 3}
+  - texture1: {fileID: 2800000, guid: 12fe6b569259bb94393864dcf64b995c, type: 3}
+  - texture2: {fileID: 2800000, guid: 61ff6f763a1ac8048bace718726ebf45, type: 3}
+  - texture3: {fileID: 2800000, guid: 0aa823ec5f47ce544b4ff0fe2b65aac1, type: 3}
+  - texture4: {fileID: 2800000, guid: 8ea6055449db8374d96eee8a4b8c81dc, type: 3}
+  - texture5: {fileID: 2800000, guid: 3d557f0519a82274d875f7fd3b8f2245, type: 3}
+  - texture6: {fileID: 2800000, guid: 244f70480aae0fb4396d339b3dafb1c4, type: 3}
+  - texture7: {fileID: 2800000, guid: a4620821a1f182144b2a5a89c6ff4b28, type: 3}
+  - texture8: {fileID: 2800000, guid: 3b74acb19b7db794a87ba8c4c363d149, type: 3}
+  - texture9: {fileID: 2800000, guid: 6ef3cb28b41e40747a9c4d0e41b63f73, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
