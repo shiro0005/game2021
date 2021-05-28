@@ -14,6 +14,14 @@ public class Sceneseni: MonoBehaviour
         Flag = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneTransition.Nextscene(m_scene);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player"&&!Flag)
