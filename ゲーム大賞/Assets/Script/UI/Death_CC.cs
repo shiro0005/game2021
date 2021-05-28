@@ -6,11 +6,11 @@ using UnityEngine.UI;  // 追加しましょう
 
 public class Death_CC : MonoBehaviour
 {
-    public GameObject score_object = null; // Textオブジェクト
+    //public GameObject score_object = null; // Textオブジェクト
 
     public int sateg_deth;
 
-    public GameObject p_Number;
+    //public GameObject p_Number;
 
 
 
@@ -36,10 +36,10 @@ public class Death_CC : MonoBehaviour
 
         }
 
-        // オブジェクトからTextコンポーネントを取得
-        Text score_text = score_object.GetComponent<Text>();
-        // テキストの表示を入れ替える
-        score_text.text = " ×　" + (sateg_deth - death_Count);
+        //// オブジェクトからTextコンポーネントを取得
+        //Text score_text = score_object.GetComponent<Text>();
+        //// テキストの表示を入れ替える
+        //score_text.text = " ×　" + (sateg_deth - death_Count);
 
 
         //if(old_Death_Count != death_Count)
