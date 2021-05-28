@@ -12,7 +12,8 @@ public class Germination : MonoBehaviour
         {
 
             GameObject plants = Instantiate(plant);
-            plants.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+0.9f , this.transform.position.z);
+            float y =plant.transform.localScale.y*0.9f;
+            plants.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+y , this.transform.position.z);
             plants.transform.eulerAngles = new Vector3(0, 0, 0);
             Destroy(this.gameObject);
         }
