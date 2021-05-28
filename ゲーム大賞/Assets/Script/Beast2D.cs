@@ -88,14 +88,14 @@ public class Beast2D : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
-                speed = 8;
+                speed = 12;
                 anim.SetBool("isRun", true);
                 scale.x = 80;
 
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                speed = -8;
+                speed = -12;
                 anim.SetBool("isRun", true);
                 scale.x = -80;
 

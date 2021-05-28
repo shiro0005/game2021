@@ -11,6 +11,8 @@ public class Human2D : MonoBehaviour
     public bool isFloor = true;
     public AudioClip jumpSE;
 
+    private float weight = 0.3f;
+
     [SerializeField] private GameObject Player;
 
     private Animator anim = null;
@@ -27,16 +29,19 @@ public class Human2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HumanMove();
-        HumanJump();
+       
 
         if (Input.GetKey(KeyCode.E))
         {
             anim.SetBool("osu", true);
+            HumanMove(weight);
+            HumanJump();
         }
         else
         {
             anim.SetBool("osu", false);
+            HumanMove(1.0f);
+            HumanJump();
         }
 
 
@@ -46,7 +51,7 @@ public class Human2D : MonoBehaviour
         }
     }
 
-    void HumanMove()
+    void HumanMove(float weight)
     {
         if (isFloor)
         {
@@ -56,7 +61,7 @@ public class Human2D : MonoBehaviour
             if (x > 0.2 )
             {
                 speed = Speed;
-                rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
+                rb2D.velocity = new Vector2(x * speed*weight, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
 
                 anim.SetBool("run", true);
@@ -66,7 +71,7 @@ public class Human2D : MonoBehaviour
             else if( x < -0.2)
             {
                 speed = Speed;
-                rb2D.velocity = new Vector2(x * speed, rb2D.velocity.y);//, rb.velocity.z);
+                rb2D.velocity = new Vector2(x * speed*weight, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
 
                 anim.SetBool("run", true);
