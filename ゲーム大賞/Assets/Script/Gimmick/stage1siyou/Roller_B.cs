@@ -15,7 +15,7 @@ public class Roller_B : MonoBehaviour
     {
         HanC = GameObject.Find("Hantei_Roll"); 
         RollBox = HanC.GetComponent<Hantei_C>();
-        transform.rotation = Quaternion.Euler(0, Ti, 0);
+        transform.rotation = Quaternion.Euler(0, 0, Su);
     }
 
     // Update is called once per frame
@@ -23,13 +23,13 @@ public class Roller_B : MonoBehaviour
     {
         if (RollBox.getFlag())
         {
-            transform.rotation = Quaternion.Euler(0, Su, 0);
-            GetComponent<BoxCollider2D>().enabled = false;
+            transform.rotation = Quaternion.Euler(0, 0, Ti);
+            //GetComponent<BoxCollider2D>().enabled = false;
             //Debug.Log("ï«èàóùÉIÉì");
         }
         else if (!RollBox.getFlag())
         {
-            transform.rotation = Quaternion.Euler(0, Ti, 0);
+            transform.rotation = Quaternion.Euler(0, 0, Su);
             GetComponent<BoxCollider2D>().enabled = true;
             //Debug.Log("ï«èàóùÉIÉt");
         }
