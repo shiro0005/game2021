@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
-  jamp: 5
+  jamp: 7
   isFloor: 1
   jumpSE: {fileID: 8300000, guid: d44130bb1c6b8c54ab96509cf396fbff, type: 3}
   Player: {fileID: 8692304369003958676}
