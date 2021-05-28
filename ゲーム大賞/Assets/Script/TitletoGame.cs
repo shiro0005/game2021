@@ -4,24 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Sceneseni: MonoBehaviour
+public class TitletoGame : MonoBehaviour
 {
     public int m_scene;
     private static bool Flag = false;
-  
+
     private void Start()
     {
         Flag = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        if (collision.gameObject.tag == "Player"&&!Flag)
+        if (Input.GetKeyDown(KeyCode.Space)&&!Flag)
         {
             SceneTransition.Nextscene(m_scene);
             Flag = true;
         }
     }
-    
-   
 }
