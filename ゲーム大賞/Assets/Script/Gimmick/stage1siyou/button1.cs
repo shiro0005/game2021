@@ -7,6 +7,7 @@ public class button1 : MonoBehaviour
     public GameObject box;//錘
     public bool open;
     public GameObject child;
+    public AudioClip BGM_Gim;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class button1 : MonoBehaviour
                 open = true;
                 //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
                 child.GetComponent<Door1>().DoirOpen1();
+                SE.instance.PlaySE(BGM_Gim);
             }
         }
     }
