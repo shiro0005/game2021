@@ -27,6 +27,10 @@ public class Plant2D : MonoBehaviour
 
     private Animator animator;
 
+    public AudioClip plantingSE;
+    public AudioClip growupSE;
+    public AudioClip moveSE;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,8 +76,9 @@ public class Plant2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetBool("isPlanting", true);
+            
             this.GetComponent<Planting>().Plant(Pvec.x, Pvec.y, Seed, Player.transform);//種飛ばし
-
+            SE.instance.PlaySE(plantingSE);
         }
         else
         {
@@ -107,8 +112,8 @@ public class Plant2D : MonoBehaviour
 
                 //ツタ伸ばし
                 child.GetComponent<tuta>().Growup(angle);
+                SE.instance.PlaySE(growupSE);
 
-                
                 if (child.GetComponent<tuta>().GetScale()> 0.25f)//ツタ限界
                 {
                     flag = 2;
@@ -153,6 +158,7 @@ public class Plant2D : MonoBehaviour
                 {
                     Prb2D.velocity = Prb2D.velocity * lowPower;//速度を決める
                 }
+                SE.instance.PlaySE(moveSE);
                 flag = 2;
                 break;
             default:

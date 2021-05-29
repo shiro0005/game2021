@@ -8,7 +8,8 @@ public class Sceneseni: MonoBehaviour
 {
     public int m_scene;
     private static bool Flag = false;
-  
+    public AudioClip transitionSE;
+
     private void Start()
     {
         Flag = false;
@@ -27,6 +28,7 @@ public class Sceneseni: MonoBehaviour
     {
         if (collision.gameObject.tag == "Player"&&!Flag)
         {
+            SE.instance.PlaySE(transitionSE);
             SceneTransition.Nextscene(m_scene);
             Flag = true;
         }
