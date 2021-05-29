@@ -137,6 +137,7 @@ public class Plant2D : MonoBehaviour
             case 3:
                 angle = 0.0f;//Œ³’Ê‚è
                 flag = 0;
+                child.GetComponent<tuta>().GrowReset();
                 break;
 
             case 4:
