@@ -19,6 +19,7 @@ public class Sceneseni: MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneTransition.Nextscene(m_scene);
+            Flag = true;
         }
     }
 
