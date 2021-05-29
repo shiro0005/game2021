@@ -16205,6 +16205,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1895900667}
+    - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
+      propertyPath: m_scene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
+      propertyPath: sateg_deth
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 782071903074781388, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
       propertyPath: m_Name
       value: SategPara
@@ -16636,6 +16644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scene: 4
+  transitionSE: {fileID: 8300000, guid: af7976cbcc50aa74497448a265f295ea, type: 3}
 --- !u!61 &1796333210
 BoxCollider2D:
   m_ObjectHideFlags: 0

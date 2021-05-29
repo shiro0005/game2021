@@ -261,9 +261,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 707883491}
     - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
+      propertyPath: m_scene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
+      propertyPath: sateg_deth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
       propertyPath: score_object
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
+      propertyPath: transitionSE
+      value: 
+      objectReference: {fileID: 8300000, guid: d33b9329741b8bd43a348994a091c3b8, type: 3}
     - target: {fileID: 782071903074781388, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
       propertyPath: m_Name
       value: SategPara
@@ -27152,6 +27164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scene: 2
+  transitionSE: {fileID: 8300000, guid: af7976cbcc50aa74497448a265f295ea, type: 3}
 --- !u!61 &1043182599
 BoxCollider2D:
   m_ObjectHideFlags: 0

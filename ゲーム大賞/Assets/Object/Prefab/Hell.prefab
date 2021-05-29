@@ -71,3 +71,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scene: 6
+  transitionSE: {fileID: 8300000, guid: d68c9b801ab05d3429483571cf59ce83, type: 3}

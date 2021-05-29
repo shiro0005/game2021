@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5502e8f5bf6f8184797986568548c019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_object: {fileID: 0}
   sateg_deth: 5
-  p_Number: {fileID: 0}
   player: {fileID: 0}
+  m_scene: 0
+  transitionSE: {fileID: 8300000, guid: d33b9329741b8bd43a348994a091c3b8, type: 3}

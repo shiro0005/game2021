@@ -152,6 +152,9 @@ MonoBehaviour:
   Seed: {fileID: 3121149127055906188, guid: 418a272ae96366048b91d2c939c533ba, type: 3}
   Player: {fileID: 8692304369003958676}
   child: {fileID: 8692304370668611181}
+  plantingSE: {fileID: 8300000, guid: a94ac0faf2aa79949b50f7d6a37d1379, type: 3}
+  growupSE: {fileID: 8300000, guid: c182a99c06c01034eb622e022ecf57ae, type: 3}
+  moveSE: {fileID: 8300000, guid: 756f1796498dd254aa9a1d1d0d6a5953, type: 3}
 --- !u!114 &8692304369074752707
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,10 +15,13 @@ public class Death_CC : MonoBehaviour
 
 
     public GameObject player;
-
+    public int m_scene;
 
     int death_Count = 0;
     int old_Death_Count = 0;
+    bool flag = false;
+    public AudioClip transitionSE;
+
     // 初期化
     void Start()
     {
@@ -30,10 +33,12 @@ public class Death_CC : MonoBehaviour
     {
         death_Count = player.GetComponent<Player>().GetDeathCount();
 
-        if (sateg_deth - death_Count <= 0)
+        if (sateg_deth - death_Count < 0&&!flag)
         {
             //GemaOver
-
+            SE.instance.PlaySE(transitionSE);
+            SceneTransition.Nextscene(m_scene);
+            flag = true;
         }
 
         //// オブジェクトからTextコンポーネントを取得
