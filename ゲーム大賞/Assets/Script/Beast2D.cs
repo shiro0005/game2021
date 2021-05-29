@@ -5,9 +5,10 @@ using UnityEngine;
 public class Beast2D : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    
+
 
     public AudioClip jumpSE;
+    public AudioClip kakkuuSE;
     private float speed;
     private float gravity;
     private bool isFloor;
@@ -124,6 +125,7 @@ public class Beast2D : MonoBehaviour
             //Eキーを押してる間だけ滑空---------------------------------------------------------
             if (Input.GetKey(KeyCode.E))
             {
+                SE.instance.PlaySE(kakkuuSE);
                 anim.SetBool("isFry", true);
 
                 // gravity = -1.0f;  //値を下げれば重くなる
