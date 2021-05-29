@@ -34,7 +34,7 @@ public class box1 : MonoBehaviour
         if (who.gameObject.activeInHierarchy)
         {
             Debug.Log("l‚ªG‚ê‚Ä‚¢‚é");
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.K))
             {
 
                 this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

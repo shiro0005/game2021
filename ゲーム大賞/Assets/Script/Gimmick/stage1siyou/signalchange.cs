@@ -44,7 +44,7 @@ public class signalchange : MonoBehaviour
                     seconds += Time.deltaTime;
                     if (seconds >= 0.25)
                     {
-                        if (Input.GetKey(KeyCode.E))
+                        if (Input.GetKey(KeyCode.K))
                         {
                             //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
                             havescript2.GetComponent<Green>().ColorChange2P();//緑オン
@@ -74,7 +74,7 @@ public class signalchange : MonoBehaviour
                     seconds += Time.deltaTime;
                     if (seconds >= 0.25)
                     {
-                        if (Input.GetKey(KeyCode.E))
+                        if (Input.GetKey(KeyCode.K))
                         {
                             //関数呼び出し、エラー時や挙動がおかしい場合一時避難推奨
                             havescript1.GetComponent<Red>().ColorChange();//赤オン

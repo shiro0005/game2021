@@ -123,7 +123,7 @@ public class Beast2D : MonoBehaviour
             //----------------------------------------------------------------------------------
 
             //EƒL[‚ğ‰Ÿ‚µ‚Ä‚éŠÔ‚¾‚¯ŠŠ‹ó---------------------------------------------------------
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.K))
             {
                 SE.instance.PlaySE(kakkuuSE);
                 anim.SetBool("isFry", true);
@@ -149,7 +149,7 @@ public class Beast2D : MonoBehaviour
 
                 rb.velocity = new Vector3(speed, rb.velocity.y);
             }
-            else if (Input.GetKeyUp(KeyCode.E))
+            else if (!Input.GetKeyUp(KeyCode.K))
             {
                 anim.SetBool("isFry", false);
             }

@@ -52,7 +52,7 @@ public class signal3 : MonoBehaviour
         {
 
             //Debug.Log("l‚ª—Ìˆæ‚É“ü‚Á‚Ä‚é");
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.K))
             {
                 if (seconds >= 0.25)
                 {
