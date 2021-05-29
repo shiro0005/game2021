@@ -15,9 +15,9 @@ public class Player : MonoBehaviour
     public AudioClip deathSE;
     public AudioClip tennseiSE;
 
-    bool Hflag;
-    bool Aflag;
-    bool Pflag;
+    public bool Hflag;
+    public bool Aflag;
+    public bool Pflag;
 
     private int DeathCount = 0;
 
@@ -37,9 +37,28 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hflag = false;
-        Aflag = false;
-        Pflag = true;
+        if (Hflag)
+        {
+            Aflag = false;
+            Pflag = false;
+        }
+        else if (Aflag)
+        {
+            Hflag = false;
+            Pflag = false;
+
+        }
+        else if (Pflag)
+        {
+            Hflag = false;
+            Aflag = false;
+        }
+        else
+        {
+            Pflag = true;
+            Hflag = false;
+            Aflag = false;
+        }
 
         this.human.SetActive(Hflag);
         this.animal.SetActive(Aflag);

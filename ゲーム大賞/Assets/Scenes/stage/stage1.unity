@@ -27506,6 +27506,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8692304369003958678, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
+      propertyPath: Aflag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692304369003958678, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
+      propertyPath: Hflag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692304369003958678, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
+      propertyPath: Pflag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8692304369939014680, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
       propertyPath: jumpSE
       value: 
