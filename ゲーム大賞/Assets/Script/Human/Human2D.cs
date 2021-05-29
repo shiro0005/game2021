@@ -31,7 +31,7 @@ public class Human2D : MonoBehaviour
     {
        
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.K))
         {
             anim.SetBool("osu", true);
             HumanMove(weight);

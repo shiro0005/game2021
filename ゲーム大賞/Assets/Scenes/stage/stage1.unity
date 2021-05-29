@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
       propertyPath: sateg_deth
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 782071903074781378, guid: 9d0ac9cf3fb956349ba8d4b7b1fc176a, type: 3}
       propertyPath: score_object
@@ -27512,7 +27512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8692304369003958678, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
       propertyPath: Hflag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8692304369003958678, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
       propertyPath: Pflag

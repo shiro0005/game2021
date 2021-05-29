@@ -73,7 +73,7 @@ public class Plant2D : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             animator.SetBool("isPlanting", true);
             
