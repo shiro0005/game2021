@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     //public float cool;
 
     public AudioClip deathSE;
+    public AudioClip tennseiSE;
 
     bool Hflag;
     bool Aflag;
@@ -69,6 +70,8 @@ public class Player : MonoBehaviour
     void PlayerReincarnation()
     {
         Debug.Log("ê∂Ç´ï‘Ç¡ÇΩ");
+
+        SE.instance.PlaySE(tennseiSE);
 
         if (Hflag == true)
         {

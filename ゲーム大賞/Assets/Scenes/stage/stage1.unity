@@ -27493,6 +27493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8692304369939014680, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
+      propertyPath: jumpSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 57f407f1675d1f145939fb3352f64b01, type: 3}
     - target: {fileID: 8692304370668611176, guid: 1399f79e9293e4844a2a117a6527f5d1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.003

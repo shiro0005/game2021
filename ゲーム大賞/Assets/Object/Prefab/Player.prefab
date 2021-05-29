@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8692304369003958679}
-  jumpSE: {fileID: 8300000, guid: 3c173c326d905334d920df4f193ac439, type: 3}
+  jumpSE: {fileID: 8300000, guid: 7bbdb39591c50a745bff94ab3bd5172a, type: 3}
+  kakkuuSE: {fileID: 8300000, guid: 6126ee7fdd811e042879a1af952bc2ec, type: 3}
 --- !u!70 &8692304369939014682
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ MonoBehaviour:
   Speed: 8
   jamp: 7
   isFloor: 1
-  jumpSE: {fileID: 8300000, guid: d44130bb1c6b8c54ab96509cf396fbff, type: 3}
+  jumpSE: {fileID: 8300000, guid: 57f407f1675d1f145939fb3352f64b01, type: 3}
   Player: {fileID: 8692304369003958676}
 --- !u!70 &8692304369074752733
 CapsuleCollider2D:
@@ -307,6 +308,7 @@ MonoBehaviour:
   animal: {fileID: 8385752072287074615}
   plant: {fileID: 8385752073254515786}
   deathSE: {fileID: 8300000, guid: c9c04f46300209e4da22db3c127beaf2, type: 3}
+  tennseiSE: {fileID: 8300000, guid: 2ed4230681f87434caaee83d4ba6f275, type: 3}
 --- !u!50 &8692304369003958679
 Rigidbody2D:
   serializedVersion: 4
