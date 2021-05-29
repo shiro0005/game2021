@@ -7,6 +7,7 @@ public class box1 : MonoBehaviour
     public GameObject who;
     public GameObject mat;
     Rigidbody2D rb2d;
+    public GameObject boxUI;
 
     //public GameObject FisText;
     //bool Textflag;
@@ -34,12 +35,14 @@ public class box1 : MonoBehaviour
         if (who.gameObject.activeInHierarchy)
         {
             Debug.Log("êlÇ™êGÇÍÇƒÇ¢ÇÈ");
-            if (Input.GetKey(KeyCode.K))
+            if (col.gameObject.name == "Player")
             {
-
-                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
-                //Textflag = false;
+                boxUI.GetComponent<gimibox_UI>().afterGimmickUI();
+                if (Input.GetKey(KeyCode.K))
+                {
+                    //boxUI.GetComponent<gimibox_UI>().afterGimmickUI();
+                    this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
             }
         }
     }
@@ -49,8 +52,7 @@ public class box1 : MonoBehaviour
 
         this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX 
             | RigidbodyConstraints2D.FreezeRotation;
-
-        //Textflag = true;
+        boxUI.GetComponent<gimibox_UI>().beforeGimmickUI();
 
     }
 }

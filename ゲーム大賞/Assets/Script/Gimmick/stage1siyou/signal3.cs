@@ -7,6 +7,8 @@ public class signal3 : MonoBehaviour
     public GameObject who;
     GameObject havescript1;//別のscから関数を呼ぶ
     GameObject havescript2;
+    public GameObject sigUI;
+    public AudioClip BGM_Gim;
 
     bool touch = false;
 
@@ -38,11 +40,16 @@ public class signal3 : MonoBehaviour
     void OnTriggerStay2D(Collider2D col)
     {
         touch = true;
+        if (col.gameObject.name == "human_1")
+        {
+            sigUI.GetComponent<gimisig_UI>().after2GimmickUI();
+        }
         Debug.Log("Rollのシグナルの範囲入ってる");
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
+        sigUI.GetComponent<gimisig_UI>().before2GimmickUI();
         touch = false;
     }
 
@@ -63,6 +70,7 @@ public class signal3 : MonoBehaviour
 
                         havescript2.GetComponent<GreenAn>().AnotherColorChange2P();//緑オン
                         havescript1.GetComponent<RedAn>().AnotherNoColorChange();//赤オフ
+                        SE.instance.PlaySE(BGM_Gim);
                         seconds = 0;
 
                     }
@@ -72,6 +80,7 @@ public class signal3 : MonoBehaviour
                     {
                         havescript1.GetComponent<RedAn>().AnotherColorChange();//赤オン
                         havescript2.GetComponent<GreenAn>().AnotherNoColorChange2P();//緑オフ
+                        SE.instance.PlaySE(BGM_Gim);
                         seconds = 0;
                     }
                 }
