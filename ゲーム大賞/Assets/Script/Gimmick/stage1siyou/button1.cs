@@ -25,7 +25,7 @@ public class button1 : MonoBehaviour
     void OnCollisionStay2D(Collision2D col)
     {
         //î†ÇÃèÍçá
-        if (col.gameObject.name == "box")
+        if (col.gameObject.name == "box"&&!open)
         {
             if (box.gameObject.activeInHierarchy)
             {
