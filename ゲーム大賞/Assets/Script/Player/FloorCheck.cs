@@ -5,8 +5,8 @@ using UnityEngine;
 public class FloorCheck : MonoBehaviour
 {
     private string graundTag = "Floor";
-    private bool isGround = false;
-    private bool isGroundEnter, isGroundStay, isGroundExit;
+    private bool isGround = true;
+    public bool isGroundEnter, isGroundStay, isGroundExit;
 
 
     public bool IsGround()
@@ -26,7 +26,7 @@ public class FloorCheck : MonoBehaviour
         return isGround;
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == graundTag)
         {
@@ -35,7 +35,7 @@ public class FloorCheck : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == graundTag)
         {
@@ -44,7 +44,7 @@ public class FloorCheck : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == graundTag)
         {
