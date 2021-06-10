@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2378715755847146789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2555711042282614191}
+  - component: {fileID: 4743345747246210873}
+  - component: {fileID: 8735871625427789672}
+  m_Layer: 7
+  m_Name: animalFloorCheack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2555711042282614191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378715755847146789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.002, z: 0}
+  m_LocalScale: {x: 0.03, y: 0.002, z: 0.625}
+  m_Children: []
+  m_Father: {fileID: 9163696833960797069}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4743345747246210873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378715755847146789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &8735871625427789672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378715755847146789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c51ea05d727add44b7580e0dcf6a4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGroundEnter: 0
+  isGroundStay: 0
+  isGroundExit: 0
 --- !u!70 &8692304369883710736
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -48,14 +121,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8692304369003958679}
-  Speed: 0
-  JSpeed: 0
-  Glider: 0
-  AirFirstMove: 0
-  AirAdjustmentRate: 0
-  GliderSpeedRate: 0
+  Speed: 12
+  JSpeed: 8
+  Glider: 0.3
+  AirAdjustmentRate: 0.1
+  GliderSpeedRate: 0.8
+  Floor: {fileID: 8735871625427789672}
   jumpSE: {fileID: 8300000, guid: 7bbdb39591c50a745bff94ab3bd5172a, type: 3}
   kakkuuSE: {fileID: 8300000, guid: 6126ee7fdd811e042879a1af952bc2ec, type: 3}
+  isFloor: 0
 --- !u!70 &8692304369939014682
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1396,13 +1470,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d26cbdd3dafda84ab07525b470df834, type: 3}
---- !u!4 &9163696833960797069 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d26cbdd3dafda84ab07525b470df834, type: 3}
-  m_PrefabInstance: {fileID: 8692304370431657062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8385752072287074615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d26cbdd3dafda84ab07525b470df834, type: 3}
+  m_PrefabInstance: {fileID: 8692304370431657062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9163696833960797069 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d26cbdd3dafda84ab07525b470df834, type: 3}
   m_PrefabInstance: {fileID: 8692304370431657062}
   m_PrefabAsset: {fileID: 0}

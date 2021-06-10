@@ -35,6 +35,7 @@ public class Human2D : MonoBehaviour
 
         if (isFloor)
         {
+            anim.SetBool("isJamp", false);
             if (Input.GetKey(KeyCode.K))
             {
                 anim.SetBool("osu", true);
@@ -47,6 +48,7 @@ public class Human2D : MonoBehaviour
                 HumanMove(1.0f);
                 HumanJump();
             }
+           
         }
 
 
@@ -112,43 +114,44 @@ public class Human2D : MonoBehaviour
             {
                 Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // 力を設定
                 rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
-                Debug.Log("跳んだ!");
+                //Debug.Log("跳んだ!");
                 SE.instance.PlaySE(jumpSE);
                 anim.SetBool("isJamp", true);
-                Debug.Log(isFloor);
+                //Debug.Log(isFloor);
+                isFloor = false;
             }
         }
 
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            //isFloor = true;
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Floor")
+    //    {
+    //        //isFloor = true;
 
-            anim.SetBool("isJamp", false);
-        }
-    }
+    //        anim.SetBool("isJamp", false);
+    //    }
+    //}
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            //isFloor = true;
-        }
-    }
-    
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Floor")
+    //    {
+    //        //isFloor = true;
+    //    }
+    //}
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {  //"Floor"タグが付いているオブジェクト
-        if (collision.gameObject.tag == "Floor")
-        {
-            //isFloor = false;
-            Debug.Log("離陸");
-        }
-    }
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{  //"Floor"タグが付いているオブジェクト
+    //    if (collision.gameObject.tag == "Floor")
+    //    {
+    //        //isFloor = false;
+    //        Debug.Log("離陸");
+    //    }
+    //}
 
     void GimmickStart()
     {

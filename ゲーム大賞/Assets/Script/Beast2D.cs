@@ -8,55 +8,47 @@ public class Beast2D : MonoBehaviour
     [SerializeField] float Speed;
     [SerializeField] float JSpeed;
     [SerializeField] float Glider;
-    [SerializeField] float AirFirstMove;
     [SerializeField] float AirAdjustmentRate;
     [SerializeField] float GliderSpeedRate;
+    [SerializeField] FloorCheck Floor;
     public AudioClip jumpSE;
     public AudioClip kakkuuSE;
     private float speed;
     //private float gravity;
-    private bool isFloor;
+    [SerializeField] private bool isFloor;
 
     private Animator anim = null;
+    private GameObject child;
+
 
     //Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            isFloor = true;
-            anim.SetBool("isJamp", false);
-            anim.SetBool("isFry", false);
-        }
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
-            isFloor = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {  //"Floor"タグが付いているオブジェクト
-        if (collision.gameObject.tag == "Floor")
-        {
-            isFloor = false;
-        }
+        child = transform.GetChild(4).gameObject;
     }
 
 
     void Update()
     {
+        //if (child.GetComponent<FloorCheck>().IsGround())
+        //{
+        //    isFloor = true;
+        //    anim.SetBool("isJamp", false);
+        //    anim.SetBool("isFry", false);
+        //}
+        //else
+        //{
+        //    isFloor = false;
+        //}
+
+        isFloor = Floor.IsGround();
+
         //プレイヤーが地面と接触してる時=========================================================================
         if (isFloor)
         {
+            anim.SetBool("isJamp", false);
+            anim.SetBool("isFry", false);
             Vector3 scale = transform.localScale;
 
             //接触した状態でspaceキーが押されたときジャンプ--------------------------------
