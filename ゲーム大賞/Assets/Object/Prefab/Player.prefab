@@ -107,8 +107,6 @@ MonoBehaviour:
   jamp: 7
   isFloor: 1
   jumpSE: {fileID: 8300000, guid: 57f407f1675d1f145939fb3352f64b01, type: 3}
-  Floor: {fileID: 2333756214487197853}
-  airWeight: 2
   Player: {fileID: 8692304369003958676}
 --- !u!70 &8692304369074752733
 CapsuleCollider2D:
@@ -530,7 +528,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -558,9 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c51ea05d727add44b7580e0dcf6a4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGroundEnter: 0
-  isGroundStay: 0
-  isGroundExit: 0
 --- !u!1001 &8692304370188362730
 PrefabInstance:
   m_ObjectHideFlags: 0

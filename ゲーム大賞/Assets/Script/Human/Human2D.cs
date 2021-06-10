@@ -10,10 +10,8 @@ public class Human2D : MonoBehaviour
     Rigidbody2D rb2D;
     public bool isFloor = true;
     public AudioClip jumpSE;
-    public FloorCheck Floor;
 
     private float weight = 0.3f;
-    public float airWeight;
 
     [SerializeField] private GameObject Player;
 
@@ -31,29 +29,25 @@ public class Human2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isFloor = Floor.IsGround();
+       
 
-        if (isFloor)
+        if (Input.GetKey(KeyCode.K))
         {
-            if (Input.GetKey(KeyCode.K))
-            {
-                anim.SetBool("osu", true);
-                HumanMove(weight);
-                HumanJump();
-            }
-            else
-            {
-                anim.SetBool("osu", false);
-                HumanMove(1.0f);
-                HumanJump();
-            }
+            anim.SetBool("osu", true);
+            HumanMove(weight);
+            HumanJump();
+        }
+        else
+        {
+            anim.SetBool("osu", false);
+            HumanMove(1.0f);
+            HumanJump();
         }
 
 
         if (!isFloor)
         {
-            HumanAirMove(airWeight);
-            
+            Debug.Log("離れてる");
         }
     }
 
@@ -115,10 +109,8 @@ public class Human2D : MonoBehaviour
                 Debug.Log("跳んだ!");
                 SE.instance.PlaySE(jumpSE);
                 anim.SetBool("isJamp", true);
-                Debug.Log(isFloor);
             }
         }
-
     }
 
 
@@ -126,7 +118,7 @@ public class Human2D : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            //isFloor = true;
+            isFloor = true;
 
             anim.SetBool("isJamp", false);
         }
@@ -136,7 +128,7 @@ public class Human2D : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            //isFloor = true;
+            isFloor = true;
         }
     }
     
@@ -145,7 +137,7 @@ public class Human2D : MonoBehaviour
     {  //"Floor"タグが付いているオブジェクト
         if (collision.gameObject.tag == "Floor")
         {
-            //isFloor = false;
+            isFloor = false;
             Debug.Log("離陸");
         }
     }
@@ -153,38 +145,6 @@ public class Human2D : MonoBehaviour
     void GimmickStart()
     {
 
-    }
-
-    void HumanAirMove(float weight)
-    {
-        if (!isFloor)
-        {
-            Vector3 scale = transform.localScale;
-
-            float x = Input.GetAxis("Horizontal");
-            if (x > 0.2)
-            {
-                speed = Speed;
-                rb2D.velocity = new Vector2(rb2D.velocity.x + (weight * Time.deltaTime), rb2D.velocity.y);//, rb.velocity.z);
-
-                scale.x = 50;
-            }
-            else if (x < -0.2)
-            {
-                speed = Speed;
-                rb2D.velocity = new Vector2(rb2D.velocity.x - (weight*Time.deltaTime), rb2D.velocity.y);//, rb.velocity.z);
-
-                scale.x = -50;
-            }
-
-            else
-            {
-                speed = 0;
-                anim.SetBool("run", false);
-            }
-
-            transform.localScale = scale;
-        }
     }
 
 }

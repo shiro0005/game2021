@@ -384,7 +384,6 @@ MonoBehaviour:
   who: {fileID: 1937019630}
   mat: {fileID: 147804538}
   boxUI: {fileID: 2044309841}
-  XPosSeconds: 0
 --- !u!70 &147804541
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -27552,7 +27551,7 @@ Transform:
   m_GameObject: {fileID: 1620533189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 47.1, y: 7, z: 5}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 20.57909, y: 20.57909, z: 20.57909}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
