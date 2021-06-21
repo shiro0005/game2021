@@ -34,17 +34,17 @@ public class Menu : MonoBehaviour
 
 
 
-        if (PauseCheck)
+        if (PauseCheck)//一時停止中なら
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                ButtonUI[num].transform.localScale /= 1.1f;
+                ButtonUI[num].transform.localScale /= 1.1f;//元のサイズ
                 num--;
                 if (num < 0)
                 {
                     num = ButtonUI.Length - 1;
                 }
-                ButtonUI[num].transform.localScale *= 1.1f;
+                ButtonUI[num].transform.localScale *= 1.1f;//拡大表現
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -66,7 +66,7 @@ public class Menu : MonoBehaviour
                         break;
                     case 1:
                         UnPause();
-                        SceneTransition.Nextscene(0);
+                        SceneTransition.Nextscene(0);//タイトル
                         break;
                     case 2:
                         UnPause();
@@ -74,7 +74,7 @@ public class Menu : MonoBehaviour
                         break;
                     case 3:
                         #if UNITY_EDITOR
-                            UnityEditor.EditorApplication.isPlaying = false;
+                            UnityEditor.EditorApplication.isPlaying = false;//ゲームを終了する
                         #else
                             Application.Quit();
                         #endif
@@ -88,17 +88,23 @@ public class Menu : MonoBehaviour
 
     private void Pause()
     {
-        Time.timeScale = 0;
-        audioSource.enabled = false;
-        child.SetActive(true);
-        PauseCheck = true;
-        ButtonUI[0].transform.localScale *= 1.1f;
+        Time.timeScale = 0;                         //時間を止める
+        audioSource.enabled = false;                //SEを止める
+        child.SetActive(true);                      //Menu画面をだす
+        PauseCheck = true;                          //一時停止中のフラグ
+        ButtonUI[0].transform.localScale *= 1.1f;   //拡大表現
     }
+
     private void UnPause()
     {
         Time.timeScale = 1;
         child.SetActive(false);
         audioSource.enabled = true;
         PauseCheck = false;
+    }
+
+    public bool GetMenu()//これを取得して各スクリプトでこれを条件式にいれる
+    {
+        return PauseCheck;
     }
 }
