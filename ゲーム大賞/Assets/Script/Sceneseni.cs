@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Sceneseni: MonoBehaviour
+public class Sceneseni : MonoBehaviour
 {
     public int m_scene;
     private static bool Flag = false;
@@ -26,13 +26,11 @@ public class Sceneseni: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player"&&!Flag)
+        if (collision.gameObject.tag == "Player" && !Flag)
         {
             SE.instance.PlaySE(transitionSE);
             SceneTransition.Nextscene(m_scene);
             Flag = true;
         }
     }
-    
-   
 }
