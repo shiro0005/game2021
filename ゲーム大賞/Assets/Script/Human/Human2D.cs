@@ -65,6 +65,8 @@ public class Human2D : MonoBehaviour
         {
             Vector3 scale = transform.localScale;
 
+            //Šµ«‚ª‚È‚­‚È‚évelocity0
+
             float x = Input.GetAxis("Horizontal");
             if (x > 0.2 )
             {

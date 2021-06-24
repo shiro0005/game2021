@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8692304369003958679}
   Speed: 12
-  JSpeed: 8
+  JSpeed: 35
   Glider: 0.3
   AirAdjustmentRate: 0.1
   GliderSpeedRate: 0.8
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4906873a4c0d85c469c3f52bc1bde34a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 8
-  jamp: 7
+  Speed: 10
+  jamp: 18
   isFloor: 1
   jumpSE: {fileID: 8300000, guid: 57f407f1675d1f145939fb3352f64b01, type: 3}
   Floor: {fileID: 2333756214487197853}
@@ -410,9 +410,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
