@@ -7,7 +7,7 @@ public class Plant2D : MonoBehaviour
     [SerializeField] GameObject Seed;//飛ばす種
 
     //移動に使う力
-    private float power = 10.0f;
+    private float power = 40.0f;
     private float lowPower = 1.0f;
 
     public GameObject Player;//プレイヤー
