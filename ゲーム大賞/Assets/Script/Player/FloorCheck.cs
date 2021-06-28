@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloorCheck : MonoBehaviour
 {
     private string graundTag = "Floor";
+    private string FGimmick = "Floor_Gimmick";
     private bool isGround = true;
     public bool isGroundEnter, isGroundStay, isGroundExit;
 
@@ -28,7 +29,7 @@ public class FloorCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == graundTag)
+        if (collision.gameObject.tag == graundTag||collision.gameObject.tag==FGimmick)
         {
             //Debug.Log("地面に当たった");
             isGroundEnter = true;
@@ -37,7 +38,7 @@ public class FloorCheck : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == graundTag)
+        if (collision.gameObject.tag == graundTag || collision.gameObject.tag == FGimmick)
         {
             //Debug.Log("地面に当たってる");
             isGroundStay = true;
@@ -46,7 +47,7 @@ public class FloorCheck : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == graundTag)
+        if (collision.gameObject.tag == graundTag || collision.gameObject.tag == FGimmick)
         {
             //Debug.Log("地面から抜け出した");
             isGroundExit = true;
