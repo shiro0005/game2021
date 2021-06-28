@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Plant
   - fade
+  - Floor_Gimmick
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - tuta
   - player
   - seed
-  - 
+  - ball
   - 
   - 
   - 
