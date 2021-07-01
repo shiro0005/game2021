@@ -15,9 +15,9 @@ public class Player : MonoBehaviour
     public AudioClip deathSE;
     public AudioClip tennseiSE;
 
-    public bool Hflag;
-    public bool Aflag;
-    public bool Pflag;
+    [SerializeField] bool Hflag;
+    [SerializeField] bool Aflag;
+    [SerializeField] bool Pflag;
 
     private int DeathCount = 0;
 
@@ -48,17 +48,17 @@ public class Player : MonoBehaviour
             Pflag = false;
 
         }
-        else if (Pflag)
+        else// if (Pflag)
         {
             Hflag = false;
             Aflag = false;
         }
-        else
-        {
-            Pflag = true;
-            Hflag = false;
-            Aflag = false;
-        }
+        //else
+        //{
+        //    Pflag = true;
+        //    Hflag = false;
+        //    Aflag = false;
+        //}
 
         this.human.SetActive(Hflag);
         this.animal.SetActive(Aflag);
@@ -79,6 +79,16 @@ public class Player : MonoBehaviour
         {
             PlayerReincarnation();
         }
+
+        CheckHuman();
+
+        if(Hflag==false)
+        {
+            //Debug.Log("ザワールド");
+            //Debug.Break();
+        }
+
+        
 
         this.human.SetActive(Hflag);//人無し
         this.animal.SetActive(Aflag);//動物有り
@@ -125,6 +135,30 @@ public class Player : MonoBehaviour
     public int GetDeathCount()
     {
         return DeathCount;
+    }
+
+    public bool CheckHuman()
+    {
+
+        //Debug.Log(Hflag);
+        //Debug.Log(Aflag);
+        //Debug.Log(Pflag);
+        if (Hflag)
+        {
+            //Debug.Log("ヒトダヨー");
+            return true;
+        }
+        else if (Aflag)
+        {
+            //Debug.Log("ケモノダヨー");
+            return false;
+        }
+        else
+        {
+            //Debug.Log("植物です");
+            return false;
+        }
+        //return false;
     }
 
 }
