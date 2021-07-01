@@ -59,20 +59,13 @@ public class Heavy : MonoBehaviour
 
     private void OnCollisionExit(Collision col)
     {
-<<<<<<< HEAD
         
-=======
->>>>>>> 79164b90ba8b7a43a53d48c0b5b61e5e12706c34
             rb.constraints = RigidbodyConstraints.FreezePositionZ
             | RigidbodyConstraints.FreezePositionX
             | RigidbodyConstraints.FreezeRotationX
             | RigidbodyConstraints.FreezeRotationZ;
 
             Textflag = false;
-<<<<<<< HEAD
        
-=======
-        
->>>>>>> 79164b90ba8b7a43a53d48c0b5b61e5e12706c34
     }
 }
