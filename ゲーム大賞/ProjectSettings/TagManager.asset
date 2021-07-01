@@ -7,7 +7,6 @@ TagManager:
   - Floor
   - Plant
   - fade
-  - Floor_Gimmick
   layers:
   - Default
   - TransparentFX
@@ -18,7 +17,7 @@ TagManager:
   - tuta
   - player
   - seed
-  - ball
+  - 
   - 
   - 
   - 
@@ -50,7 +49,4 @@ TagManager:
     locked: 0
   - name: Goal
     uniqueID: 1758762093
-    locked: 0
-  - name: UI
-    uniqueID: 3402043815
     locked: 0

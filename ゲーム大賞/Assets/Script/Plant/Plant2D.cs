@@ -7,7 +7,7 @@ public class Plant2D : MonoBehaviour
     [SerializeField] GameObject Seed;//飛ばす種
 
     //移動に使う力
-    private float power = 30.0f;
+    private float power = 10.0f;
     private float lowPower = 1.0f;
 
     public GameObject Player;//プレイヤー
@@ -114,7 +114,7 @@ public class Plant2D : MonoBehaviour
                 child.GetComponent<tuta>().Growup(angle);
                 SE.instance.PlaySE(growupSE);
 
-                if (child.GetComponent<tuta>().GetScale()> 0.25f)//ツタ限界
+                if (child.GetComponent<tuta>().GetScale()> 2.5f)//ツタ限界
                 {
                     flag = 2;
                 }
@@ -133,7 +133,7 @@ public class Plant2D : MonoBehaviour
                 child.GetComponent<tuta>().Growdown(angle);
 
 
-                if(child.GetComponent<tuta>().GetScale() <= 0.003f)//ツタ元通り
+                if(child.GetComponent<tuta>().GetScale() <= 0.05f)//ツタ元通り
                 {
                     flag = 3;
                 }

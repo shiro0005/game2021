@@ -7,22 +7,27 @@ public class gimisig_UI : MonoBehaviour
     public Texture texture;
     public Texture texture2;
 
-    bool texSwitch;
+    public Player player;
+
+    bool Check_Human;
+    //bool texSwitch;
 
     // Start is called before the first frame update
     void Start()
     {
-        texSwitch = false;
+        //texSwitch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (texSwitch)
+        Check_Human = player.CheckHuman();
+
+        if (Check_Human)
         {
             after2GimmickUI();
         }
-        else if (!texSwitch)
+        else if (!Check_Human)
         {
             before2GimmickUI();
         }
@@ -33,9 +38,9 @@ public class gimisig_UI : MonoBehaviour
 
         GetComponent<Renderer>().material.mainTexture = texture2;
         GetComponent<Renderer>().material.color = Color.white;
-        texSwitch = true;
+        
 
-        Debug.Log("シグナルUI出てるよ");
+        //Debug.Log("シグナルUI出てるよ");
     }
 
     public void before2GimmickUI()
@@ -43,8 +48,7 @@ public class gimisig_UI : MonoBehaviour
 
         GetComponent<Renderer>().material.mainTexture = texture;
         GetComponent<Renderer>().material.color = Color.white;
-        texSwitch = false;
 
-        Debug.Log("シグナルUI出てないよ");
+        //Debug.Log("シグナルUI出てないよ");
     }
 }

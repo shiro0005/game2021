@@ -16,10 +16,10 @@ public class Planting : MonoBehaviour
     // Update is called once per frame
     public void Plant(float x,float y,GameObject seed, Transform plantTop)
     {
-        //if (x == 0)
-        //{
-        //    x = 0.2f;
-        //}
+        if (x == 0)
+        {
+            x = 0.2f;
+        }
 
         // éÌÇÃï°êª
         GameObject seeds = Instantiate(seed);
