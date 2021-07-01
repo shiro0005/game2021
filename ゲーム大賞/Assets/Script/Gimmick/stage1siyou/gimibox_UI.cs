@@ -7,27 +7,22 @@ public class gimibox_UI : MonoBehaviour
     public Texture texture;
     public Texture texture2;
 
-    public Player player;
-
-    bool Check_Human;
-    //bool texSwitch;
+    bool texSwitch;
 
     // Start is called before the first frame update
     void Start()
     {
-        //texSwitch = false;
+        texSwitch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Check_Human = player.CheckHuman();
-
-        if (Check_Human)
+        if (texSwitch)
         {
             afterGimmickUI();
         }
-        else if (!Check_Human)
+        else if (!texSwitch)
         {
             beforeGimmickUI();
         }
@@ -38,7 +33,7 @@ public class gimibox_UI : MonoBehaviour
         
         GetComponent<Renderer>().material.mainTexture = texture2;
         GetComponent<Renderer>().material.color = Color.white;
-        //texSwitch = true;
+        texSwitch = true;
 
         //Debug.Log("ボックスUI出てるよ");
     }
@@ -48,7 +43,7 @@ public class gimibox_UI : MonoBehaviour
         
         GetComponent<Renderer>().material.mainTexture = texture;
         GetComponent<Renderer>().material.color = Color.white;
-        //texSwitch = false;
+        texSwitch = false;
 
         //Debug.Log("ボックスUI出てないよ");
     }
