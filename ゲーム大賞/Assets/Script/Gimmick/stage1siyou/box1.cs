@@ -32,7 +32,7 @@ public class box1 : MonoBehaviour
         {
             if (col.gameObject.name == "Player")
             {
-                boxUI.GetComponent<gimibox_UI>().afterGimmickUI();
+                //boxUI.GetComponent<gimibox_UI>().afterGimmickUI();
                 if (Input.GetKey(KeyCode.K))
                 {
                     this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -45,7 +45,7 @@ public class box1 : MonoBehaviour
             this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition
             | RigidbodyConstraints2D.FreezeRotation;
 
-            boxUI.GetComponent<gimibox_UI>().beforeGimmickUI();
+            //boxUI.GetComponent<gimibox_UI>().beforeGimmickUI();
         }
     }
 
