@@ -44,7 +44,7 @@ public class signal3 : MonoBehaviour
         {
             sigUI.GetComponent<gimisig_UI>().after2GimmickUI();
         }
-        Debug.Log("Rollのシグナルの範囲入ってる");
+        //Debug.Log("Rollのシグナルの範囲入ってる");
     }
 
     void OnTriggerExit2D(Collider2D col)
