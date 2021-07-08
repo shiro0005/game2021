@@ -44,6 +44,7 @@ public class Hantei_B : MonoBehaviour
             seconds = 0;
         }
 
+
         ChangeFlag = true;
 
     }
