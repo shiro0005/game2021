@@ -25,7 +25,6 @@ public class Beast2D : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        child = transform.GetChild(4).gameObject;
     }
 
 
