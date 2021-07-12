@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public static Player instance = null;
 
     public GameObject human;
-    public GameObject animal;
-    public GameObject plant;
+    //public GameObject animal;
+    //public GameObject plant;
 
     //public float cool;
 
@@ -61,8 +61,8 @@ public class Player : MonoBehaviour
         }
 
         this.human.SetActive(Hflag);
-        this.animal.SetActive(Aflag);
-        this.plant.SetActive(Pflag);
+        //this.animal.SetActive(Aflag);
+        //this.plant.SetActive(Pflag);
     }
 
     // Update is called once per frame
@@ -81,8 +81,8 @@ public class Player : MonoBehaviour
         }
 
         this.human.SetActive(Hflag);//人無し
-        this.animal.SetActive(Aflag);//動物有り
-        this.plant.SetActive(Pflag);//植物有り
+        //this.animal.SetActive(Aflag);//動物有り
+        //this.plant.SetActive(Pflag);//植物有り
     }
 
     //転生処理＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝

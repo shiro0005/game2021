@@ -19,7 +19,7 @@ public class Human2D : MonoBehaviour
 
     private Animator anim = null;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,26 +36,26 @@ public class Human2D : MonoBehaviour
         if (isFloor)
         {
             anim.SetBool("isJamp", false);
-            if (Input.GetKey(KeyCode.K))
-            {
-                anim.SetBool("osu", true);
-                HumanMove(weight);
-                HumanJump();
-            }
-            else
-            {
-                anim.SetBool("osu", false);
-                HumanMove(1.0f);
-                HumanJump();
-            }
-           
+            //if (Input.GetKeyDown(KeyCode.K))
+            //{
+            //    anim.SetBool("osu", true);
+            //    HumanMove(weight);
+            //    HumanJump();
+            //}
+            //else
+            //{
+            //    anim.SetBool("osu", false);
+            //}
+            HumanMove(1.0f);
+            HumanJump();
+
         }
 
 
         if (!isFloor)
         {
             HumanAirMove(airWeight);
-            
+
         }
     }
 
@@ -68,23 +68,23 @@ public class Human2D : MonoBehaviour
             //Šµ«‚ª‚È‚­‚È‚évelocity0
 
             float x = Input.GetAxis("Horizontal");
-            if (x > 0.2 )
+            if (x > 0.2)
             {
                 speed = Speed;
-                rb2D.velocity = new Vector2(x * speed*weight, rb2D.velocity.y);//, rb.velocity.z);
+                rb2D.velocity = new Vector2(x * speed * weight, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
 
-                anim.SetBool("run", true);
+                anim.SetBool("isWalk", true);
 
                 scale.x = 50;
             }
-            else if( x < -0.2)
+            else if (x < -0.2)
             {
                 speed = Speed;
-                rb2D.velocity = new Vector2(x * speed*weight, rb2D.velocity.y);//, rb.velocity.z);
+                rb2D.velocity = new Vector2(x * speed * weight, rb2D.velocity.y);//, rb.velocity.z);
                 //Debug.Log("ˆÚ“®");
 
-                anim.SetBool("run", true);
+                anim.SetBool("isWalk", true);
 
                 scale.x = -50;
             }
@@ -92,7 +92,7 @@ public class Human2D : MonoBehaviour
             else
             {
                 speed = 0;
-                anim.SetBool("run", false);
+                anim.SetBool("isWalk", false);
             }
 
             transform.localScale = scale;
@@ -117,7 +117,7 @@ public class Human2D : MonoBehaviour
                 Vector3 force = new Vector3(0.0f, 8.0f, 0.0f);  // —Í‚ðÝ’è
                 rb2D.velocity = new Vector2(rb2D.velocity.x, jamp);//, rb.velocity.z);
                 //Debug.Log("’µ‚ñ‚¾!");
-                SE.instance.PlaySE(jumpSE);
+                //SE.instance.PlaySE(jumpSE);
                 anim.SetBool("isJamp", true);
                 //Debug.Log(isFloor);
                 isFloor = false;
@@ -177,7 +177,7 @@ public class Human2D : MonoBehaviour
             else if (x < -0.2)
             {
                 speed = Speed;
-                rb2D.velocity = new Vector2(rb2D.velocity.x - (weight*Time.deltaTime), rb2D.velocity.y);//, rb.velocity.z);
+                rb2D.velocity = new Vector2(rb2D.velocity.x - (weight * Time.deltaTime), rb2D.velocity.y);//, rb.velocity.z);
 
                 scale.x = -50;
             }
@@ -185,7 +185,7 @@ public class Human2D : MonoBehaviour
             else
             {
                 speed = 0;
-                anim.SetBool("run", false);
+                anim.SetBool("isWalk", false);
             }
 
             transform.localScale = scale;

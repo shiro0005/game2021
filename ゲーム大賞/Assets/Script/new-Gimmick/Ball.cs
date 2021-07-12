@@ -5,35 +5,38 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] GameObject KeyObject;
-    [SerializeField] GameObject Player;
-    private bool Flag = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //[SerializeField] GameObject Player;
+    [SerializeField] Vector2 vec;
+    [SerializeField] bool beginning;
 
+    private void Start()
+    {
+        if (beginning)//最初からボールを動かす
+        {
+            this.GetComponent<Rigidbody2D>().AddForce(vec);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (KeyObject.GetComponent<Signal>().Touch)
-        {
-            Flag = true;
-        }
-
-        if (Flag)
-        {
-            float x = Player.transform.position.x - this.transform.position.x;
-            x = Mathf.Sign(x) * 5.0f;
-            this.GetComponent<Rigidbody2D>().velocity= new Vector2(x, this.GetComponent<Rigidbody2D>().velocity.y);
-        }
+        //回転
+        this.GetComponent<Rigidbody2D>().angularVelocity = -this.GetComponent<Rigidbody2D>().velocity.x * 30f; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")//ゲームオーバー
         {
             SceneTransition.Nextscene(0);
         }
+        else if (collision.gameObject == KeyObject)//任意のタイミングで動かす
+        {
+            this.GetComponent<Rigidbody2D>().velocity = vec;
+        }
+        if (collision.gameObject.layer == 10)//カベの跳ね返り用
+        {
+            this.GetComponent<Rigidbody2D>().velocity= collision.gameObject.GetComponent<reflection>().GetVector();
+        }
+        
     }
 }

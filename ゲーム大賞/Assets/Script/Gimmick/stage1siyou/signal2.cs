@@ -37,9 +37,9 @@ public class signal2 : MonoBehaviour
             seconds += Time.deltaTime;
             if (who.gameObject.activeInHierarchy)
             {
-                if (Input.GetKey(KeyCode.K))
+                if (Input.GetKeyDown(KeyCode.K))
                 {
-                    if (seconds >= 0.25)
+                    if (seconds >= 0.25f)
                     {
                         SignalBox.changeFlag();
                     }
@@ -58,7 +58,7 @@ public class signal2 : MonoBehaviour
             }
             else
             {
-                Debug.Log("予期せぬエラー");
+                Debug.Break();
             }
         }
     }
@@ -136,6 +136,7 @@ public class signal2 : MonoBehaviour
         child.GetComponent<Green>().ColorChange2P();//緑オン
         child2.GetComponent<Red>().NoColorChange();//赤オフ
         seconds = 0;
+       // Debug.Break();
     }
 
     void GreentoRed()
@@ -143,6 +144,7 @@ public class signal2 : MonoBehaviour
         child2.GetComponent<Red>().ColorChange();//赤オン
         child.GetComponent<Green>().NoColorChange2P();//緑オフ
         seconds = 0;
+       // Debug.Break();
     }
 
 }
