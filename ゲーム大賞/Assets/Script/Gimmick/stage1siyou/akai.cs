@@ -13,7 +13,7 @@ public class akai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HanB = GameObject.Find("Hantei"); //Unityちゃんをオブジェクトの名前から取得して変数に格納する
+        HanB = GameObject.Find("Hantei_New"); //Unityちゃんをオブジェクトの名前から取得して変数に格納する
         WallBox = HanB.GetComponent<Hantei_B>();
 
         //script = unitychan.GetComponent<UnityChanScript>(); //unitychanの中にあるUnityChanScriptを取得して変数に格納する
