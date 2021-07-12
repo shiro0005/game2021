@@ -36,8 +36,8 @@ public class gimisig_UI : MonoBehaviour
     public void after2GimmickUI()
     {
 
-        GetComponent<Renderer>().material.mainTexture = texture2;
-        GetComponent<Renderer>().material.color = Color.white;
+        //GetComponent<Renderer>().material.mainTexture = texture2;
+        //GetComponent<Renderer>().material.color = Color.white;
         
 
         //Debug.Log("シグナルUI出てるよ");
@@ -46,8 +46,8 @@ public class gimisig_UI : MonoBehaviour
     public void before2GimmickUI()
     {
 
-        GetComponent<Renderer>().material.mainTexture = texture;
-        GetComponent<Renderer>().material.color = Color.white;
+        //GetComponent<Renderer>().material.mainTexture = texture;
+        //GetComponent<Renderer>().material.color = Color.white;
 
         //Debug.Log("シグナルUI出てないよ");
     }

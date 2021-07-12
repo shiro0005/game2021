@@ -10,7 +10,7 @@ public class scan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HanB = GameObject.Find("Hantei");
+        HanB = GameObject.Find("Hantei_New");
 
         SignalBox = HanB.GetComponent<Hantei_B>();
     }
