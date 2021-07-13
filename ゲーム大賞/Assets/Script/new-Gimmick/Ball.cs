@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     {
         if (beginning)//Å‰‚©‚çƒ{[ƒ‹‚ğ“®‚©‚·
         {
-            this.GetComponent<Rigidbody2D>().AddForce(vec);
+            this.GetComponent<Rigidbody2D>().velocity = vec;
         }
     }
     // Update is called once per frame
