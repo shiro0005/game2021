@@ -74,11 +74,7 @@ public class Player : MonoBehaviour
             PlayerDeath();
         }
 
-        //Qキーを押す
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PlayerReincarnation();
-        }
+        
 
         this.human.SetActive(Hflag);//人無し
         //this.animal.SetActive(Aflag);//動物有り
