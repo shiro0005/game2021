@@ -9,7 +9,7 @@ public class Goaaaal : MonoBehaviour
     {
         if (collision.name == "soccer_ball")
         {
-            Canvas.SetActive(true);
+            
         }
     }
 }

@@ -26,7 +26,7 @@ public class Sceneseni : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !Flag)
+        if (collision.gameObject.name == "soccer_ball")
         {
             SE.instance.PlaySE(transitionSE);
             SceneTransition.Nextscene(m_scene);
