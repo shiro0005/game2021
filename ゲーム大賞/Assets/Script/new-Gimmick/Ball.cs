@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     //[SerializeField] GameObject Player;
     [SerializeField] Vector2 vec;
     [SerializeField] bool beginning;
-
+    [SerializeField] int scene_num;
     private void Start()
     {
         if (beginning)//最初からボールを動かす
@@ -32,7 +32,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")//ゲームオーバー
         {
-            SceneTransition.Nextscene(0);
+            SceneTransition.Nextscene(scene_num);
         }
         else if (collision.gameObject == KeyObject)//任意のタイミングで動かす
         {

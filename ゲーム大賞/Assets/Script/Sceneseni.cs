@@ -26,11 +26,23 @@ public class Sceneseni : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "soccer_ball")
+        if (this.gameObject.name == "goal")
         {
-            SE.instance.PlaySE(transitionSE);
-            SceneTransition.Nextscene(m_scene);
-            Flag = true;
+            if (collision.gameObject.name == "soccer_ball")
+            {
+                SE.instance.PlaySE(transitionSE);
+                SceneTransition.Nextscene(m_scene);
+                Flag = true;
+            }
+        }
+        else if (this.gameObject.name == "Hell")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                SE.instance.PlaySE(transitionSE);
+                SceneTransition.Nextscene(m_scene);
+                Flag = true;
+            }
         }
     }
 }
